@@ -1,9 +1,9 @@
 <h1 align="center">Hi 👋, I'm Nam you can call me Klaus</h1>
 <h3 align="center">I did a lot of things like games, web, software</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=namkio12g&label=Profile%20views&color=0e75b6&style=flat" alt="namkio12g" /> </p>
 
 - 📫 How to reach me **toilanam12309@gmail.com**
+- 👨‍💻 My portfolio [https://namkio12g.github.io/portfolio/](https://namkio12g.github.io/portfolio/)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
