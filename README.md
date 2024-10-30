@@ -3,7 +3,7 @@
 
 
 - 📫 How to reach me **toilanam12309@gmail.com**
-- 👨‍💻 My portfolio [https://namkio12g.github.io/portfolio/](https://namkio12g.github.io/portfolio/)
+- 👨‍💻 My portfolio [https://namkio12g.github.io/](https://namkio12g.github.io/)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
