@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Nam you can call me Klaus</h1>
-<h3 align="center">I did a lot of things like games, web, software</h3>
+<h3 align="center">I did a lot of things like games, web, application</h3>
 
 
 - 📫 How to reach me **toilanam12309@gmail.com**
