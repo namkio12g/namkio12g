@@ -1,900 +1,948 @@
-0:04
-when I say that this video is probably the most important programming video you're ever going to watch it's partly because what I'm going to tell you is
-0:11
-distinctly a minority position among programmers probably 5% or under programmers will tell you that
-0:16
-definitively objectoriented programming is just not a good idea and in fact is going to lead you astray uh maybe you'll
-0:22
-have another 20 30% of programmers who will hem and ha and say that it has some virtues and some weaknesses and it might
-0:27
-be better applied to some problems than others I'm not telling you that I'm telling you definitively no objectoriented programming doesn't fit
-0:34
-any problem and you shouldn't take it seriously this is almost certainly not what you were told in school if you
-0:40
-attended a programming course in the last 15 years or you read most educational materials about programming the the pervasive default assumption is
+0:00
+i do think it's kind of bad when I start off ready to disagree with an article before it even starts but I'm willing to
+0:07
+be wrong we're going to go in there with an open mind i just simply feel like I don't agree with this at all i do really
+0:14
+like how he frames it though senior devs aren't faster they're just dodging problems you're forced to solve i I
+0:19
+actually like I love that name of that cuz I really hope that this is actually a part of I hope we get a lot of the
+0:24
+same stuff here all right experts have it easy something that's painfully underststudied is how experts are more
+0:29
+efficient than noviceses while achieving better results i say underststudied and not unstudied because it's common
+0:35
+knowledge that charging people for their time results in experts being paid less since they work faster which is why
+0:41
+experts charge more for their time this effect is underststudied in uh in the impact it has on noviceses entering the
 0:47
-just well objector programming is the right way to go and it's just a settled matter so I reiterate this is probably
-Outline
-0:53
-going to be the most important video you watch about programming because it's going to tell you something you're not going to get from a vast majority of
-0:58
-other sources first off I'm going to try and make clear exactly what I'm complaining about
-1:04
-and what I'm not complaining about uh and then I'm going to try and explain well what is objectoriented programming really because if we don't nail that
-1:09
-down it's almost impossible to criticize and then I'll try and account for well if objectoriented programming isn't good
-1:15
-why does it dominate the industry that's kind of an important question actually uh and then I'll actually get into well
-1:21
-why does object oring programming not work what's bad about it and then lastly if I'm telling you to not program in an object-oriented style then what do you
-1:27
-do instead what is the alternative it's called procedural programming but what does that look like
-1:32
-exactly so what are the problems with object-oriented programming well first off the problem is really not classes
-Problems
-1:39
-per se that is I think it's actually possible to program occasionally with classes in a way that's fairly benign I
-1:45
-don't think it's particularly beneficial but uh for aesthetic reasons it might uh
-1:50
-seem more pleasing to have an explicit association between certain functions and certain data types doing this
-1:56
-pervasively though as I'll make clear is a really bad idea that's where everything goes wrong is when you try and shove every function of your code
-2:03
-every Behavior into an association with a data type that leads to disaster secondly I don't think the
-2:09
-problem with object-oriented programming is about performance I recommend you watch this talk by Mike Acton called
-2:15
-Data oriented design in C++ he makes some very interesting points and provides some insight into that world of
-2:20
-programming which most of us don't do but I think he overstates his case fine there's a lot of software out there that
+field a novice will start out being wolffully inefficient putting in incredible amounts of effort and running through all number of mental hoops in
+0:54
+order to maintain the growing pile of unmaintainable abstractions they've developed okay yeah that's actually
+1:00
+that's actually a really great thing though right i mean who I once built a
+1:05
+game yes it was kind of like one of those shooting flying airplane games when I was much younger with X and A i
+1:11
+had something like seven to 10 levels of inheritance for every object you know what I learned stop doing that right
+1:19
+like it was great for me it was great like if I wouldn't have done that
+1:25
+honestly if I wouldn't have made such a shitty architecture I would have literally never learned why inheritance
+1:31
+sucks or at least that level of inheritance sucks like that's the thing is that people forget that failing
+1:38
+miserably is in fact a huge benefit i lost all of my money in doing a startup
+1:43
+i wasted two years of my time in an utterly failed startup i started it
+1:49
+steered the ship straight into the ground absolutely was the worst but you know what i still look back on that time
+1:54
+as being one of the single most valuable times of my life and I almost like I
+2:01
+pretty much direct all of my success to that one thing an expert doesn't have to
+2:07
+jump through these hoops well no no not true an expert jumped through these
+2:13
+hoops remember that it's inappropriate to say that an expert doesn't jump through these hoops experts jumped through these hoops and some of them
+2:19
+jumped through the hoops for a decade some of them only jumped through the hoops for a couple years because they understood like you you start to
 2:25
-should be written with much more regard for performance but I think there's tons of software that just really doesn't
-2:31
-apply you'll also hear complaints about excessive abstraction uh from generally
-2:36
-the same people people like Mike Acton and again here I think they're overstating their case I think abstraction is actually a worthy goal in
-2:44
-practice most abstractions aren't good it takes a long long time to develop good ones and as I'll explain a major
-2:50
-problem with obori programming is it does tend to produce abstractions that aren't any good that's the real problem
-2:55
-not the idea of abstraction itself another interesting talk to watch is won by adner coimbre called what
-3:02
-programming is never about and the thing which he says programming is never about is code prettiness how code looks
-3:08
-Aesthetics his main point is that programmers typically Focus too much on Surface concerns about their code rather
-3:14
-than stuff that really matters I think though he actually simply misstates his case or or rather his thesis doesn't
-3:21
-really follow from his arguments which are generally valid I think when really pressed he would admit that Elegance
-3:28
-Simplicity flexibility readability maintainability structure all these things you might file under code Aesthetics I think he would admit
-3:34
-actually do matter but I think the more accurate way to spin his point is that these surface level Virtues Of code are
-3:41
-good things and actually important but object-oriented programming and abstraction heavy programming in general
-3:46
-fails to deliver them in fact it provides just the illusion of these things object-oriented programming is
-3:51
-sold on the basis that it supposedly provides these things but particularly Simplicity and elegance it actually
-3:57
-makes things worse lastly be clear that I'm pushing procedural programming not necessarily
-Functional Programming
-4:03
-functional programming which is a different thing as I will make clear in a moment I happen to think that
-4:08
-functional programming actually is the future of higher level code I think it may actually be the default way we
-4:14
-program at a higher level in 10 years from now or something but there are serious efficiency problems that make
-4:20
-functional programming not really viable in certain domains of programming and so my message is whether your code ends up functional or imperative that's a
+understand these things they they you know you make the hoops you jump through the hoops they can more clearly see the
+2:30
+actual problem at hand and more efficiently put their time and effort towards making progress against the problem in contrast novices will spend
+2:37
+more time battling problems they've created for themselves let's explore the idea by looking at two characters
+2:42
+entrapped in the maze and how they go about escaping deal by the way I know the writers out here careful in the
+2:47
+YouTube transition you know lines that's like an old YouTube transitions okay now let's do this you know I think modern
+2:53
+things is is changed a little bit in how people do speaking all right stuck in the maze expert versus novice imagine a
+2:59
+world-class navigator being set in a maze they will come they come well prepared with a compass and paper and
+3:05
+have previously escaped some of the most dastardly mazes designed by man also imagine yourself you're a novice in this
+3:11
+scenario you didn't realize you were being thrown into a maze you didn't even know if the goal is to get out or find the center as you go deeper and deeper
+3:17
+into the maze you realize that you're hopelessly lost well if you would have followed the right-hand wall rule you wouldn't be lost dummy okay uh through
+3:24
+the miracle of literary convenience your expert friend calls you up and offers you advice as soon as you start keep
+3:30
+track of where you've been using a ball of twine it'll help you keep track of the decisions you make you didn't realize the criticality of feline play
+3:36
+things and so you didn't bring a ball of twine I think is that a reference to Git is that a reference to making sure your
+3:42
+code is at least in a suppository of some sort you also don't remember where you started you ask your expert friend
+3:48
+for advice on what to do and they respond "Oh I've got no idea i never go
+3:53
+anywhere without my ball of twine you just shouldn't have got yourself into this mess in the first place." Friends
+3:59
+see this is why nobody has friends in the modern world anymore okay this is what happened your friends when you
+4:05
+needed help talked about how they already had all their stuff prepared and that you're the idiot and now you don't
+4:10
+have any friends okay classic that's that some of the trickiest tangles I've tackled haven't been because the core
+4:16
+problem is difficult but rather because I was helping someone with less experience and they spent several hours getting themselves more and more tied up
+4:22
+before asking for help and they've made the wrong decision which maybe solved their short-term problems but shot them
 4:27
-separate matter regardless your code should be procedural rather than
-4:32
-object-oriented so it's a good time now to to make clear exactly what are the competing paradigms of programming that
-Programming Paradigms
-4:38
-we're really talking about there are four main possibilities your code can first to be both procedural and
-4:44
-imperative procedural meaning that you have no explicit association between your data types and your functions your
-4:50
-behaviors and imperative meaning that we just mutate State whenever we feel like it we don't have any special handling of
+in the foot in the long term this bad decision made others bad decisions more likely until they were helplessly stuck
+4:33
+in the trap of their own making again I think this is a good thing though right
+4:39
+at least for me me personally I do not learn i'm not a wise man right there's
+4:45
+this whole idea that the Oh hey you're welcome for the phone notification but there's this idea that wisdom there's
+4:51
+two types of people that earn wisdom well there's technically three types of people the first type of person earns
 4:57
-shared state which can cause problem as your code gets larger and larger and more complex but in procedural and
-5:04
-imperative programming we just cope with the problems as they arise and you can think of this style of programming as
-5:09
-being basically the default it's the the obvious way to get work done so this is really how all programming was done in
+wisdom by seeing someone else's failure and is able to go "Oh I shouldn't do this because I can see that other people
+5:02
+have failed due to this." There's another set of people that when they read about stuff or they or they even
+5:10
+just observe it in text or I mean this is the same sorry that was the first person the first person is like they read in text or they see other people
 5:16
-the early days of computers but then starting in the 60s as programs got more and more complicated people began
-5:21
-thinking about well how do we solve this problem of shared State because it really can get out of hand and so we got
-5:27
-two major prescriptions on how to handle the problem one of these prescriptions says that our code should be procedural yet functional
-5:34
-meaning that all or most of the functions that make up our code should be pure they should not deal with State
-5:40
-and so programming in this style we would tackle the problem of shared state by minimizing State trying to get rid of as much of it as
-5:47
-possible the other prescription people came up with said that our code should be objectoriented and imperative and the
-5:53
-strategy here is that we simply segregate our state we take the state that makes up our program and instead of
-5:59
-sharing it promiscuously we try and divide and conquer the problem we package it into these encapsulated units
-6:04
-that we call objects and objects contain other objects and so forth and that's how we conquer the problem and these two
-6:11
-prescriptions are actually orthogonal to each other we can do both the functional business to minimize the amount of state
-6:16
-which our program deals with and then whatever state is left over we can then segregate into separate units of
-6:22
-encapsulation and in fact I think this combination approach may actually be the ideal way to structure programs at least
-6:28
-in terms of high code where we don't care so much about efficiency as I'll explain I think segregating state is
-6:34
-actually a valid strategy up to a certain level of detail a certain level of complexity and so if we first
-6:41
-minimize the amount of state which our code deals with it then becomes a viable strategy to segregate the remaining
-6:48
-State you may have noticed in my definition of object-oriented programming that I said nothing about inheritance and that is because
-Inheritance Polymorphism
-6:55
-inheritance is simply irrelevant no one defends it anymore even people who advocate for objector and programming
-7:00
-will very very commonly these days tell you to be very very careful in using inheritance or maybe not to use it at
-7:05
-all and so it's not really pertinent to any argument about whether object-oriented programming is good or
-7:11
-bad for similar reasons I didn't say anything about polymorphism in my definition because polymorphism really
-7:16
-good or bad isn't exclusive to object-oriented programming you can have procedural code that is polymorphic and
-7:22
-in fact even more polymorphic than is typically available in most objector languages so it's really not part of the
-7:28
-discussion as far as I'm concerned when I complain about object-oriented programming I'm really complaining about one idea encapsulation encapsulation
-7:36
-does not work or as I should qualify this encapsulation does not work at A fine grain level which is the core of
-7:42
-what object-oriented ideology prescribes that we need to take the state of our programs and divide and conquer that
-7:47
-problem by chopping it up into tiny little pieces that is the nature of object-oriented code and it doesn't work
-7:53
-it leads to Madness before delving into why object
-The Mystery of ObjectOriented Programming
-7:59
-programming doesn't work it is important to address this mystery of well if object Orient programming isn't so great
-8:05
-why does it now dominate the industry and why has it done so for almost the last 20 years I've heard it sometimes
-8:10
-suggested that well this was an imposition of management management wants interchangeable developers so it
-8:16
-can have a cookie cutter assembly line development process hence business types were really enthusiastic about
-8:22
-object-oriented programming promises about code reusability and compartmentalization it's a theory that
-8:28
-sounds plausible to to me but the main sticking point is that object-oriented programming doesn't actually deliver
-8:33
-these promises you'd think people would have noticed sometime in the last 20 years yet they seem not to have noticed
-8:40
-I'm also skeptical of the idea that management actually really inserts themselves in these technical decisions that often I suppose once say
-8:46
-objectoriented programming was well established and that became the pervasive Norm then yeah sure uh management would push towards doing what
-8:53
-everyone else is doing so that they can draw from the the larger talent pool but otherwise aside from pushing Engineers
-8:59
-to just go along with the Legacy system and not rebuild everything I just don't think that many business managers really
-9:05
-care that much about technical decisions I'm much more inclined to think that object-oriented programming is something
-9:10
-that programmers did to themselves and the question is then well why I think a big part of the answer simply comes down
-9:16
-to Java when it was first introduced in the mid90s Java seemed like a welcome reprieve to many programmers compared to
-9:23
-the Alternatives Java seemed really simple for example on the PC this is what application development looked like
-9:29
-you had to use the win32 API in C and not only did programmers have to concern themselves with memory management as you
-9:34
-do in C but on top of that win32 just doesn't feel like the C that you would learn from books it's not what you would
-9:39
-learn from k&r it's not what you would learn in school it's all this excess macroe heavy stuff on top that is really
-9:46
-mystifying even the tools you would use to write C programs on a Windows platform the the visual studio tools you
+and they can learn from it i've never been that person the second person is somebody with whom fails themselves even
+5:24
+after hearing that this is a failure they themselves experience the failure and thus it makes them better it makes
+5:31
+them learn from their own mistakes that's me i'm that guy i've always been someone that learns maybe a couple times
+5:38
+from the mistakes then the third type of person is someone who does not learn from their mistakes luckily I've never I've been
+5:44
+that third person quite a few times as well but I'm mostly the second person and I'm almost exclusively never the
+5:50
+first person right the first like I think TJ is the first person i think TJ can read things and realize that they're
+5:57
+wrong and then somehow apply it which I don't understand i don't learn from my mistakes i keep watching i'm the second
+6:02
+person i'm the second person i think most people are the second person second or third person often this trap is far trickier than anyone anything an expert
+6:10
+would let themselves get into novices on the other hand can easily make a a sequence of bad decisions that result in
+6:15
+an everinccreasing cost of solving the problem at hand not only are you lost in a maze without your twine but you also
+6:20
+went in a mysterious cave that looked kind of interesting at first and now you're lost in the dark meanwhile the
+6:26
+worldclass expert is happily skipping through the warm sunny parts of the maze because they knew that that cave would
+6:31
+eventually lead to a dead end also sometimes that's not I mean that's one thing that I think makes an expert an
+6:36
+expert is that an expert can walk into a cave and spend some amount of time in a
+6:42
+cave and then realize that every part of this cave if you keep on descending gets worse and worse and worse and they know
+6:49
+when to back out which I think is a really hard skill to learn is knowing when to back up it's actually really
+6:56
+really really hard to do and knowing you know what i need to delete this and start again right i just need to start
+7:01
+again that's the teleportation i'm going to simply get reset hard and give it another shot in fact just last week on
+7:07
+stream I was programming something and we literally get reset hard and just restarted the change you know why cuz I
+7:13
+was like "Dang it I did a little bit of vibe coding i did a little bit of this cuz I was comparing the difference between vibe coding and my hand coding
+7:19
+and I did a little bit too much at once lost the plot and said "You know what get reset hard try again uh I'd like to
+7:26
+stress at this point that this is no way the novice's fault no so so again I mean I'm not trying to argue with this
+7:32
+article for the sake of arguing i'm arguing because I think they're both right and wrong when you say it's not somebody's fault the reality to life is
+7:39
+if you think that cave is interesting and then you keep on going in the cave despite it getting worse and worse and worse it is your fault it's
+7:45
+definitionally your fault using the same metaphor the difference is is that you just didn't you simply were ignorant it
+7:51
+does not mean it's not your fault you were ignorant of the consequences and we all you know that's just that's like
+7:56
+literally part of learning here right uh they follow the same policy as any expert take the best action available to
+8:02
+you at the time telling a novice to just do better is not constructive feedback this feedback does not lead them to
+8:08
+improving over time since from the only perspective that matters is the scenario the novices they were taking the best
+8:14
+action available to them and if you're giving feedback that doesn't lead to improvement what's the point of the feedback so often how I find things that
+8:20
+actually make it a lot better for me This is I mean okay okay okay this is actually how I feel like I get better we
+8:26
+got to stand up for this one okay boys we are standing up for this one okay we're standing up for this one so I
+8:31
+often find that I don't get better okay i do not in fact get better by simply
+8:38
+having someone tell me where I was wrong no no no no no no no no no no no no no
+8:44
+no no i personally find that where I get
+8:49
+better is that I have to do it wrong and then I get to see how it's done right
+8:55
+and then I make this weird connection in my brain it's like oh I've never seen a problem from this angle it's now just
+9:01
+like a little thing in my back pocket it's not that so the thing and that's the big thing is that people there's a
+9:08
+lot of sensitivity in this area it's okay to be told that what you built is horseshit it's okay you should be okay
+9:14
+with that just be okay with it okay it's okay you're new even when you're not new
+9:19
+you still build horseshit in fact I would argue that 80% of code is mostly
+9:24
+horshit and it's okay we all make bad decisions okay every last one of us but
+9:30
+the thing is is that when you get good what you realize is you can make a decision that's bad its rate of decay is
+9:38
+less it can go further you get more miles out of each one of your trade-offs you make and that's because you've made
+9:45
+enough trade-offs and you've seen your trade-offs fail and you've seen your trade-offs become better and then you go
 9:51
-know wouldn't be the same as what you would learn in University probably where you probably had a Unix system and that's what you learned so it was
-9:58
-already this platform with a quite High barrier to entry but then also in this period it was undergoing this ugly
-10:03
-transition from win 16 to win32 and so you can begin to see why programmers were desperately looking for some way
+"Ah well look at that i could do that again." And then you do it again and then you do it again then you do it
+9:56
+again and you get better and better at identifying the exact same things every single time which is in fact that
+10:01
+there's almost always some sort of method to the madness and once you start feeling it out you can write like 50 60%
 10:09
-out the only real alternative at the time in PC programming was what Visual Basic but that was another effective
-10:15
-Microsoft platform you're locking yourself into and I suppose otherwise you might use Pascal or Deli but that platform had its own issues and so it
-10:22
-shouldn't be too surprising that when sun Microsystems came along and said here's this free thing that uh everyone
-10:27
-can use across all platforms that got people's attention and Java had other things going for it it certainly
-10:34
-seemed more accessible just in terms of like its naming conventions for example you look at the Java apis and you see
-10:40
-things like file input stream which is not cryptic at all and yes there are definitely issues in how abstracted uh
-10:46
-many of the apis are and in you know having to derive base classes to use the apis and all that nonsense but on first
+of your software just oneshotting it and it's mostly correct and then you'll be able to go for months on end and then
+10:14
+you go okay I've gotten these fundamental basises wrong and now I'm gonna have to pretty much rewrite the
+10:20
+software or rewrite large parts of it but it's not that bad because the problem wasn't the same when you started
+10:26
+when you started it was simple people just wanted you to display something out of a database but it never stays that
+10:31
+way and if you plan too early for everything to change like a novice then you write shitty code and you know what
+10:37
+experts do this too this is one of those expert traps that people think that somehow is only exclusive to noviceses
+10:42
+in fact I would argue that experts fall into this trap more than anybody else
+10:48
+but you over refactor or you underfactor or you overengineer you underengineer
 10:53
-glance on Surface inspection it certainly seems like a friendlier system it's not like Unix where you have stuff
+you just do all the same crap every single time so do I think it's bad no do I think you need to be told that you've
 10:59
-like iocl which is you're supposed to know is input output control and other really horrible abbreviations and then
+written shitty things yeah sure why not like don't be sensitive honestly it's not worth it it's not worth it just just
 11:05
-win32 had the same thing you know lpctstr stands for what is it long pointer to a const tar string so even if
-11:13
-you know what a tar is and a long pointer is you're stuck in this world where everything is cryptically abbreviated and it's just this godamn
-11:20
-puzzle that you have to figure out at every step Java came in and said no we don't necessarily have to program that
-11:25
-way we can write real programs that don't have to be horribly cryptic in that way and then Java took things too far in the
-11:31
-other direction but that's again we'll get to that Java also smartly had the C like
-Java
-11:37
-syntax the curly brace syntax so superficially at least it seemed familiar to programmers from C and C++
-11:42
-and it seemed like real programming it has curly BRAC after all and then the whole compilation to VM bite code
-11:49
-business was again very alluring to programmers trying to escape their platform headaches and then Java also
-11:54
-offered some very basic niceties like proper name spaces without header files for Christ's sake we still have to deal
-11:59
-with header files to do our real programming in CN C++ at least 20 years after we should have ditched them if for
-12:06
-this one thing alone I think it's worth giving Java some credit it mainstreams programming without header files and
-12:13
-then of course also very aluring garbage collection I know some hardcore lowle programmers out there will insist that
-12:18
-garbage collection is never necessary it's never a good idea but whether or not that's the case it's really hard to
-12:24
-argue with the appeal it shouldn't be surprising that the vast armies of people doing business CR applications
-12:30
-wanted to stop thinking about memory management Java also mainstreamed exceptions as the primary way to handle
-12:37
-errors and whatever problems this may have in practice I think it definitely seems appealing because the alternative
-12:42
-is ugly the alternative is what we do in CN C++ of having to have an inbound air
-12:48
-return value or like you know saving to a global and checking the global after every time you do a call it's not pretty
-12:54
-um go L with multiple return in that style probably is the better way to go but that's not the solution Java came up
-13:00
-with and so it normalized this other thing that seemed better at the time I think some people also came to like the
-Convenience
-13:06
-subject verb object nature of method calls over straight function calls because well this is just what we do in
-13:12
-English it's you know subject first then verb then object I myself don't find it all that appealing I prefer consistency
-13:19
-and I think the distinction between subject and object in many many cases gets very very murky which is one of the problems with object ored programming as
+be okay with it like it's okay you're wrong and that's okay i think something
+11:10
+that would help a lot of noviceses is letting them know it's totally normal to be
+11:16
+wrong right it's totally normal to be wrong and that's most of your journey
+11:21
+there are no experts of course there's experts and that's stupid to say it's it's it's genuinely a dumb thing to say unless if unless unless if you what
+11:28
+you're saying is that you and John Carmarmac are the same right like if you're actually saying that then I think
+11:34
+you're delusional you can get shockingly far by being generally good at tech right you can get shockingly far at
+11:40
+being uh good at You can be an expert in just having a good guess right there's
+11:45
+like this idea that yeah you're right you probably don't know how to write a database from scratch but you don't often need to know how to write a
+11:51
+database from scratch to be able to use Squeal and you can mostly you can kind of gutshot things like I can look at a
+11:56
+few different interfaces and go "Oo I like this one this one's pretty nice and I like where this is going." And I can
+12:01
+look at other ones and go I don't really like this one like that's why I can look at squeal light and see what it offers and go squeal light this is a really
+12:08
+good choice i think squealite is fantastic the novice has a genius idea still lost in the maze you keep walking
+12:15
+your friend mentioned the ball of twine and after thinking for a bit you realize your wooden your woolen jumper if
+12:20
+carefully dismantled could be a good replacement oh I'm just thinking about chewing on wool i know that's so strange but oh my gosh it's making me feel so
+12:26
+uncomfortable dutifully and with a concrete objective you sit down and begin to unravel your jumper after an
+12:31
+hour or so you get you've got your ball of yarn and after some fail oh my gosh I
+12:36
+can't stop thinking about like chewing on yarn for whatever reason have you ever had one of those things where you just think about like the texture and the squeakiness dutifully with your
+12:44
+concrete objective you sit down and begin to unravel your jumper after an hour or so you've got a ball of yarn
+12:49
+after some failed attempts at unspooling the yarn behind you you realize that one strand of yarn is hopelessly weak you
+12:55
+decide to braid the yarn you sit down for another hour or so it's pretty boring but as you assume that this is what is just what solving mazes is all
+13:03
+about a bit later your expert friend calls you up and lambasts you for wasting your time with this yarn business it was clearly never going to
+13:10
+work he says he instructs you to use broken branches from the hedges hedge that makes up the maze as the way of
+13:17
+marking your path you hadn't realized the maze was just a was or was made of hedge until this point yeah okay so I
 13:25
-we'll get to but the style of syntax in Java led to this convenience people I think since then have become addicted to
-13:31
-which is in their idees it offers them for this data type what are my options what can I do with this thing it seems
+don't really quite get this thing i I guess I quite get it what he's saying is that there's you you find out that
+13:30
+there's a better way to do things but you don't quite understand how to do that better way so you just spin your gears trying to figure it out again
 13:38
-to enable a style of programming where you can just sort of browse you don't have to hold all of the options in your
-13:43
-head you just have a vague notion of wait I'm going to take that thing and transform into this other thing I don't remember exactly what the method is
-13:48
-called I'll just grope my way there using autoc completion in my IDE again there's really actually no reason you
-13:54
-couldn't have the same style of convenience in a purely procedural language you would just have an auto comption for given this first argument
-14:01
-what functions take this type as its first argument and it' be effectively the same thing really but because of
-14:08
-quirks of history and syntax design this particular editing convenience has been implemented for languages like Java but
-14:14
-generally not straight procedural languages and I think method autocompletion may actually largely
-14:19
-explain why people sometimes claim that object-oriented apis feel easier to use
-14:24
-it's because you can largely autocomplete your way through most of the usage another thing Java seemed to have going
-14:31
-for it is that back in the mid 90s this was the Heyday of GUI programming and it seemed really logical to map components
-14:39
-as we see them in a guey window and classes in an object-oriented program that seemed like a very natural
-14:46
-correspondence this was the most tangible version of the real world modeling which object-oriented promised
-14:53
-at the time it seemed like a very plausible story and on top of that you have the virtue of java being supposedly
-14:58
-cross platform with the Java Swing API so you can write goys that will run on any system they'll look horribly ugly
-15:04
-but at least hey they run on everything you could do so-called rad rapid application development of guey
-15:10
-applications like you do in Visual Basic except in Java you're not locked into Microsoft's
-15:16
-platform so the funny thing to me about Java is that I think in an alternate history it could have had virtually all
-15:21
-the same success if not even more perhaps if it weren't object-oriented at all it could have just been a straight
-15:27
-procedural language and would have had still a big long list of attractive selling points we could have had all the
-15:32
-same portability the same garbage collection the same exception handling and and so forth down the line without
-15:38
-any of the object orientedness or at the very least without forcing everything into the mold of classes you could have
-15:44
-of a language like python say where there are classes but also just straight procedural code if you want and they can live side by side just
-15:50
-fine so there still is this question Java aside there seems to be some appeal to object-oriented programming in itself
-15:56
-and and what is that well I think very simply if you go back to the' 60s and '70s as people were grappling with the
-16:02
-problems of software systems getting larger and larger people tried to identify units of code abstraction that
-16:08
-were larger than individual functions and data types it's natural to want to describe any complex system in terms of
-16:14
-large scale components you know if you talk about human anatomy you don't explain it first in terms of microbiology that would be nuts we first
-16:21
-talk about very major organs like the brain and the heart and kidneys and and so forth as software gets larger and
-16:27
-larger it felt like like these units of code we were building out of the base materials these data structures and
-16:32
-functions they became smaller and smaller relative to the whole sadly though the one General
-16:38
-answer people could come up with of what is a unit of code abstraction bigger than a function and bigger than a data
-16:43
-type is just simply a combination of the two and hence objects were born we took our functions and our data types and we
-16:50
-Associated them together into these larger units we want to think in terms of paragraphs rather than individual
+again I think this is great this is great you should do this i mean I did this hopelessly for years it doesn't work uh but the spirit of it works yes
+13:44
+the spirit of it works i think this is good like I I do think hopelessly pushing through a maze makes you better
+13:50
+the next time you go into a maze novices spend often spend energy fixing things that are orthogonal to the actual problem orthogonal being developers
+13:57
+favorite word they want to solve whereas experts are able to direct their energy towards the problems they want to solve
+14:02
+this leads to noviceses having an extremely disoriented view of the field because the problems they end up solving are both both more difficult and less
+14:09
+interesting than those being tackled by experts nobody wants to put more effort into figuring out what uh a more boring
+14:15
+problem i also think that this is why AI feels so alluring to people who aren't very good at programming right it just
+14:22
+feels magical it feels like you're kind of an expert cuz when you want to do something it just kind of works you know
+14:28
+what I mean you're like "Wow that's crazy i could just like decide something and it worked it feels it feels magic
+14:37
+right?" The novices search strategy finally with the means of marking the path you've taken you've set out to
+14:42
+traverse the maze or maybe to escape it you're still not sure you stride along breaking the and placing branches as you
+14:48
+go not let's see you're not really sure which paths are the best so you mostly pick at random for a novice the vast
+14:54
+majority of decisions have to be made essentially randomly with very little information going into the choice if all
+15:01
+decisions were sequential and did not depend on any other decision a dedicated novice would come up with the solution
+15:06
+better than a random chance after thinking hard about the decision but the world we live in is fractal and complex
+15:12
+and complexely dependent many decisions depend on other decisions in ways that noviceses have no idea about even a
+15:18
+dedicated novice will be confronted with situations in which they must make several interdependent decisions before
+15:24
+they can get feedback on the efficacy of those decisions the novice is at first forced to make completely arbitrary
+15:31
+choices and face the consequences hopefully they can learn which consequences were due to which decisions
+15:37
+but this isn't always feasible also okay I know I'm not trying to harp on AI nor are we trying to like talk any more about AI but I do have to say one more
+15:43
+thing i've been saying this whole time that I think the maze the failure of the maze the learning how to get out of a
+15:49
+maze having valuable feedback from a friend or perhaps just having valuable feedback from your previous self in a
+15:55
+previous maze is all things that make you grow more more and more into a or an expert i think that we often as of
+16:04
+recent have been shortcutting this process and that's always been the thing I've said multiple times which is that I
+16:10
+fe that's my biggest AI fear it's not that I think programming is go away it's not that I think it's going to be better
+16:16
+than me which it you know which theoretically at some point in the universe it will be better than me it's not any of that it's that it's taking
+16:23
+away your ability to walk through the maze yourself and understand why you should use a branch at some point or why
+16:28
+you should use something else like you're just you're you're not offloading the things that you understand
+16:35
+completely you are onboarding and having something else solve and just point you down a specific path saying this is the
+16:42
+way you do it and you go "Oh I didn't think about it that way." But you don't realize why they're making that decision why was that decision made specifically
+16:48
+and that's kind of like the big the big thing that is really hard to get out is why was this one path the right one
 16:55
-sentences and object-oriented programming seem to have an answer for how we could do that it's also very natural that as we
-17:02
-build larger and larger systems and complex things as much as possible we want simple rot rules to guide us
+versus other paths what how did it arrive to that conclusion it's not that
+17:01
+the conclusion itself was valuable it's arriving to that conclusion and being able to bring forth that change is the
 17:08
-objectoriented programming seemed to present a unit of abstraction and a set of guidelines whereby we could can
+important part and so even asking chat jeopardy why did it make that decision isn't quite the same because that means
 17:14
-incrementally accrete larger and larger systems this line of thinking is what led us to patterns and then the
-17:20
-so-called solid principles and dependency injection and test driven development and all this stuff which has
+the idea never originated in your head it originated somewhere else and so
+17:19
+you're like okay and so if you're that very fortunate person that can learn
 17:25
-subsequently been piled on by many people who insist that this is now the one true way to do object-oriented
-17:30
-programming but to me all these best practices represent Band-Aids they are
-17:35
-compensation for the fact that the original vision of object-oriented programming has never panned out and every few years there's a new ideology
+just by reading someone else's mistakes and you could understand in that weird holistic manner that I said I can't then
+17:31
+maybe you can do that but I've just never been able to do that right like the that's the thing is that I can't
+17:36
+learn from that the expert knows how to avoid the failure because he's uh been inside the failure exactly and that's
 17:42
-in town about how we actually do objectoriented programming for reals this time it's very easy to miss this
+like one of the hard like the honestly I think one of the hardest parts about coding is actually like being able to your
 17:48
-Dynamic I know I did for several years because I think within all of these addendums to object programming there's
-17:54
-lots of mystical speech dancing around genuine insights but it's not quite
-17:59
-cohesive objectoriented programming feels like this circle which we've been trying to square for over a generation
-18:07
-now finally let's talk about what's really wrong with object-oriented programming specifically encapsulation
-Encapsulation
-18:13
-which is the Lynch pin of the whole thing so consider what is an object an object is this bundle of encapsulated
+thoughts directly translating into code and that's like a really that just it's just a muscle you have to do over and
+17:55
+over and over and over again effort uh makes life easier yes effort does make life easier from the perspective of an
+18:00
+expert the decision taken while solving a problem are often second nature and yet are carefully crafted as to avoid
+18:06
+unnecessary trouble down the road a novice looking upon the expert's work would be hardressed to distinguish these few important decisions based on years
+18:12
+of hard work and study from the myriad of far less important decisions based largely on personal tastes true novice
 18:20
-state and we don't interact with the state of that object directly all interactions with that state from the outside world come in through messages
-18:26
-messages to the object the object has a set of messages which it will receive called its public interface and so we
+don't even see the decision you're breezing through the particularly long and straight bit of the maze when your an expert friend calls you up and once
+18:25
+again says "Why didn't you take that right a few meters back?" they ask "there was none," you assert and
 18:32
-have private information hidden behind a public interface when an object receives a message it may in turn send messages
-18:38
-to other objects and so we can conceive of an object-oriented programming being this graph of objects all communicating
+glancing behind you confirm this fact just in case you retrace your steps and sure enough there's a sliver of a gap in
+18:37
+the hedges which you suppose could be a path to take "it's terribly cramped and overgrown compared to the wide clean
 18:44
-with each other by sending messages many people today forget though that the original conception of a
+paths you've been taking so far but it is a path." Looking around carefully now you realize the hedges are actually
 18:50
-message is not exactly synonymous with just a method call yes in practice it means calling methods but a message
+packed with cracks and gaps and thin spots who knows how many paths you've missed sometimes the novice doesn't even
 18:56
-strictly speaking sends only copies of states it doesn't send references a message sends and returns information
-19:02
-about State not State itself and well wait a minute objects themselves are
+know that the decision there's a decision to make when the decision is pointed out by a friendly expert the
+19:01
+novice can often either make the correct decision or appreciate the correct solution when it's shown to them but the
 19:07
-State and this has some interesting consequences it means that strictly speaking messages cannot pass around
+novice didn't even know there was a decision in the first place this makes it incredibly difficult for the
 19:13
-object references I've never seen a Java or C codebase that ever follows this rule perhaps some small talk programs
-19:20
-have but in general this rule is not observed at all and probably for good reason as we'll discuss but anyway if we
-19:27
-take the rule seriously it means then for an object to send a message to another object the first object must
-19:32
-hold a private reference to that other object because otherwise how is it going to talk to it to talk to an object you have to have a reference to it and where
-19:38
-is an object going to get a reference to another object if it can't get object references from messages the references
-19:44
-which an object needs have to all be there at the object's Inception they have to be there for the whole lifetime of the object and there's an even deeper
-19:52
-consequence which is that if an object is sending messages to another that other object is part of the first
-19:57
-object's private State and by the principle of encapsulation an object should be responsible for all the
-20:03
-objects which it sends messages to this should be obvious if you consider that messages indirectly read and modify
-20:09
-State when B sends a message to a here it's messing with the state of a indirectly sure but it's still messing
-20:15
-with its state and so what happens when other objects come along and send messages to that same object What's
-20:20
-Happening Here we have shared State it's hardly any different than if you had a single Global variable being shared by
-20:26
-say 10 functions if you have an object receiving messages from 10 other objects those objects are all effectively tied
-20:31
-together because they're implicitly Shar this state sure the interactions with that state are indirect through public
+ambitious novice to make progress without outside help the one thing I don't like about this whole thing is
+19:18
+that it puts like the novice in this constant state of
+19:24
+inability and purely a victim by the circumstances if that makes a sense they are incapable
+19:31
+of of making it out themselves well to a degree that's what it is i'm not sure if I believe that what I mean by that is
+19:37
+that the novice could never the novice could not observe that there's cracks in
+19:43
+the hedges without being told that there's cracks in the hedges but then you have to go okay well let's replay
+19:49
+that recursively does that mean the person who told him that there was cracks in the hedges was also told that
+19:55
+there was cracks in the hedges and then you have to go okay well then who told that person well who told that person
+20:01
+right is it's like the one miracle of science right it's the one miracle science makes
+20:07
+you have to believe is that you have to believe that there was some sort of beginning that just came into came into
+20:13
+being i guess I'm defining a novice as someone who can't figure it out for themselves but that's not a novice like
+20:18
+definitionally that is not a novice a novice is not someone who can't figure it out for themselves a novice is
+20:25
+somebody who is inexperienced that's what we call an idiot yes this was what we would be calling an idiot someone
+20:32
+that has to be constantly pointed to the next step i think you can like I think any one of you there like type one in
 20:37
-methods but those methods are providing very trivial kinds of coordination of the state you can impose rules through
-20:42
-the accessor methods like saying oh if you access this field it's a number well you can only increment that number you can't mutate it in any other way fine
+the chat if you actually think yourself as a novice you're fairly inexperienced i'd say like one to two years into
+20:43
+learning how to program would be what I would consider in the in the deeply novice range i think there's a lot of
 20:49
-but it's a very trivial kind of protection the hard problems of shared state are much much deeper where in the
+you i think there's a lot a lot of you and I think a lot of you have the vast
 20:55
-system of 10 objects all sharing the state is the real Cor coordination and the answer is there isn't any as soon as
-21:01
-you have objects being shared encapsulation just flies out the window so if we're taking encapsulation
-21:08
-seriously the only real way to structure a program to structure our objects as a graph is not as a free form graph but as
-21:14
-a strict hierarchy at the top of our hierarchy we have an object representing effectively the whole program it's our
+capability to not be a novice given time and effort and that
+21:00
+time to go from being a novice to being intermediate to being an expert is going
+21:06
+to be directly proportional to your desire to not be a novice meaning that if you spend two
+21:13
+hours a day you're going to grow two hours a day unironically if you spend 12 hours a day
 21:20
-God object and that has its direct children which represent the subcomponents and those children in turn
+you're going to beat the person spending two hours a day i spent a good 80 to 100
 21:25
-have their own subcomponents and so on Down the Line and each object in the hierarchy is
-21:30
-responsible for its direct children and the messages being passed strictly only ever go from parent to their direct
-21:37
-child the god object here for example is not supposed to reach down to its grandchild it has to do all of its interactions with this grandchild
-21:43
-indirectly through the grandchild's parent otherwise who really is responsible for that object who's managing its state it's supposed to be
+hours a week every week for years at first because I wanted it i wanted it so bad like if I didn't make it I had to
+21:33
+return to my pre like I only had my previous life to return to which was not a place I wanted to be so I was so
+21:38
+motivated by both want and need and you know the 10,000 hour thing is interesting i'm not sure if 10,000 hours
+21:44
+is true or isn't true right i don't know what I don't I don't
 21:50
-the direct parent and so what happens when we have some sort of crosscutting concern like
-21:55
-down in the hierarchy it turns out oh wait there's some business that that object has with another object in a totally different branch of the
-22:01
-hierarchy how do they talk to each other well not directly everything has to go through their common ancestor for a to
-22:08
-send a message to be here it can't actually directly invoke any kind of method it has to mutate its own state in
-22:14
-some way and then information about that state that new intention of the object gets returned from a message sent from
+know exactly how it works in programming right but there is something to it novices have skill issues novices do have skill issues it's true not that's
+21:57
+true that's because they it's it's not that they have skill issues they don't have skills yet sometimes the novice doesn't even know that there's a
+22:03
+decision to make and when the decision is pointed out by a friendly expert the novice can often either make the correct
+22:09
+decision or appreciate the correct solution when it's shown to them but the novice didn't even know there was a decision in the first place this makes
+22:15
+it incredibly difficult for the ambitious novice to make progress without outside help they cannot just
 22:20
-A's parent A's parent in turn same thing has to happen so it gets back up to the common ancestor and then only finally
-22:26
-when we get to the common ancestor can that intent be realized as a series of message calls but not directly down to B
-22:32
-it has to be bucket brigad down through the hierarchy that is how you handle cross-cutting concerns in a strict
+check their work for the mistakes because for any substantial body of work the novice likely won't be able to point
+22:27
+out half their decisions see it's that the whole v like there's like an imp like I said the the implicit victim
+22:33
+mentality I I'm not a huge lover of uh you can squeeze through this gap in the hedge recommended by your expert friend
 22:39
-encapsulated hierarchy obviously no one writes programs this way or at least no one
-22:45
-writes whole programs this way and for good reason it's an absurd way to have to write your code now you might argue that people do
-22:52
-follow these principles in practice they just do so inconsistently and perhaps there is some value in a code base where
-22:58
-you apply these principles inconsistently perhaps half fast encapsulation actually gets us something
-23:04
-so imagine we have some sort of free form graph of objects making up a program and we decide oh well there's a
-23:09
-subsystem of objects that together should be their own self-contained encapsulated hierarchy of objects and so
+before long you've come to a fork in the maze one path leads left and the other leads right the left path looks a bit
+22:44
+wider and a bit brighter but having learned from your mistakes you decide to call up your expert friend and get their advice and learn from their wisdom the
+22:50
+right path is better your friend declares you ask for an explan explanation but they are unable to give
+22:56
+you anything more specific than the right path is a stronger option it's clearly got the right look about it
+23:02
+there's no chance it will let you down frustrated at the lack of intellig intelligible wisdom you take the right
+23:07
+path and sure enough it looks like it was the correct decision the path clears up and starts to head towards the exit
 23:14
-we're going to refactor our code well very often what that means is not only do we have to do a lot of complicated
+as far as you can tell but you still don't understand what your expert friend saw and it still see it seems like they
 23:20
-rethinking of the structure of the relationships here of what calls what on the other objects we very typically have
+don't understand what they saw either you know like there's the whole Euro dreams of sushi thing and that thing's kind of always stuck with me which is
 23:26
-to introduce more objects like say here to present this whole new subsystem we probably have to introduce some new subot object you know some ruler of this
-23:34
-subsystem now all interactions with the subsystem have to be reconceptualized as going through this minor
-23:40
-deity so say we successfully do this refractor and now while our code doesn't follow the principles of encapsulation
+the people who make rice have to make rice for 3 years before they can move on to other parts of making sushi and
+23:31
+that's because I and I've used this term hidden knowledge a lot which is there's the intelligence of something and then
+23:36
+there's the hidden knowledge of it if you've ever played any sport that requires a bit of finesse you understand
+23:41
+the hidden knowledge much much better and so uh some Greek pointed this out
 23:46
-perfectly it's doing so in a half consistent way and maybe there's some benefit there well I think what tends to
-23:52
-happen is subsequently we decide oh wait we need some new interaction between elements of this encapsulated subsystem
+like 2,000 years ago exactly uh and so like I played a lot of table tennis i played an enormous amount of
+23:54
+table tennis and there comes this point where at first you're like so focused on just trying to like hit it and when you
 24:00
-and instead of having to do the hard work of figuring out how exactly it all gets coordinated from the root of that
-24:06
-subsystem the Temptation is to just handle the business directly but if we want to do the proper thing we have two
-24:12
-options maybe it turns out that that stuff external to the subsystem actually just needs to get integrated into that subsystem and so it comes under the
+hit it you don't quite understand why you're hitting it like this you're just repeating this motion because this is
+24:07
+what you've seen other people do and then at some point it almost becomes where you can feel how the ball
+24:13
+hits and you know what it's going to do and then at some point you can see how
 24:19
-purview of the subsystems rout but otherwise we now have two subsystems that need to coordinate and who's going
-24:24
-to do the coordination well now we need a new subsystem God object responsible for the collective business of these two
-24:31
-subsystems and now all interactions of these two subsystems have to go through this root object but also all
-24:36
-interactions with the outside world and these two subsystems have to go through this new root object so as you can see
-24:43
-chances are really good that what you would actually do is say it and just do this you would just reach in and have the objects directly interact with
-24:49
-each other whether they should properly do so or not and now where's the encapsulation what's the point whether
-24:55
-you follow the rules strictly or Loosely you're in a bad place if you follow the rule strictly most things you do end up
-25:02
-being very un obviously structured and very indirect and the number of defined entities in your codebase proliferates
-25:08
-with no end in sight the nature of these entities tends to be very abstract and nebulous but alternatively if you follow
-25:14
-the rules Loosely what are you even getting why are you bothering what is the point when I look at your
-25:19
-object-oriented code base what I'm going to encounter is either this over-engineered giant Tower of abstractions or I'm going to be looking
-25:26
-at this inconsistently architected pile of objects that are all probably Tangled together like Christmas lights you'll
-25:32
-have all these objects giving you a warm fuzzy feeling of encapsulation but you're not going to have any real encapsulation of any
-Barriers
-25:40
-significance what people tend to create when they design object-oriented programs are overly architected
-25:45
-buildings where the walls have been prematurely erected before we have really figured out what the needs of the floor plan are and so what happens is
-25:52
-down the line turns out 08 we need to get from this room over here to that room over there but 08 we've erected barriers in between so we end up busting
-25:59
-a bunch of holes through all the walls like the Kool-Aid guy and the resulting pattern is really not organized at all it's just swiss cheese we thought we
+the other person hit and you know that because they put this kind of spin on it you need to hit it slightly differently
+24:26
+than you would hit it if they put a downward top with a bit of right on it you know you can like almost like [ __ ]
+24:33
+give me that money kind of swing across the like the face of it and give it like this sweet arcing to the side uh hit
+24:40
+because you felt it so many times and all of a sudden it's like there's this new set of wisdom or new set of
+24:45
+knowledge that opens up where when you see someone do something you know a way to respond not because I mean you could
+24:52
+even write a book about it you could write every single motion you did but someone couldn't pick up the paddle and just do it cuz they haven't felt it they
+24:59
+don't feel the spin yet they don't feel how it feels against the paddle they
+25:04
+can't understand that when they hit it they understood where they hit it within the paddle and why it is the way it is like they they can't process those
+25:11
+things because they don't have the touch yet and so there's like this kind of intuition you started to develop and I'm
+25:16
+sure this happens everywhere i'm trying to learn how to play a little bit of golf and I want to under I can I can see
+25:22
+that there is intuition i just don't know how to gather it other than playing a whole bunch this is why coaching is
+25:28
+hard yes because there's a whole set of feeling uh table tennis legend prime i did go to China and I did have a line i
+25:35
+did uh beat a university team at one point i was I got pretty good i had a whole slew of people lined up outside
+25:41
+the door started beating regular people and then the line got to like a hundred people and just was beaten one by one by
+25:46
+one did like Olympics set to 11 and it got so fun and people were just like one guy was just like you American you can't
+25:53
+do this and I was just like yeah just just just slapping a lot of the people came in holding it with uh like holding
+26:00
+it pick like a Chinese pick style and I was still just handshake and I was just like just dominating it was so sweet it
 26:06
-were being disciplined neatly modularizing all the state but then the requirements changed or we just didn't anticipate certain details of the
+was like the greatest moment of my life and now I suck at table tennis but I loved it i loved it i was so good at one
 26:12
-implementation and we end up with a mess the lesson we should take from this is to be very careful about erecting
-26:18
-barriers about imposing structure it's actually better to start out with a free form absence of structure rather than
+point the expert's intuition is often formidable but rarely comprehensible the inability to clearly explain their
+26:17
+decisions is what makes it so useful for a novice to spend time with experts the expertise ensemble your expert friend is
 26:23
-impose a structure that will likely turn out to not really fit our problem bad structure that doesn't really fit our
+chastising you for missing the obvious gaps in the hedge and not for realizing you could climb over hedges and for not
 26:28
-problem not only makes it harder to implement the code in the first place it hinders change and it confuses anyone who looks at our code because it's
-26:35
-implying one thing but then what's really going on is another in the object-oriented world we have to think
-26:40
-about all these graphs we have to think about an inheritance hierarchy we have to think about a composition graph we
-26:45
-have to think about data flows between the object and also we're thinking about a call graph the liberating thing about
-26:50
-procedural code is there's just the call graph we also of course do have to think about how our data is structured and how
-26:56
-our data gets transformed throughout the course course of the program but the beauty of procedural code is that we can think about that totally independent of
-27:03
-any notion of responsibilities when I'm looking at my data I can think just about my data and when I'm looking at my
-27:08
-functions I'm not thinking about all these self-imposed barriers I'm not constantly trying to group and
-27:14
-modularize everything into these small units of so-called single responsibilities when I sit down to
-27:20
-write object-oriented code I always have to play this game I have this mental list of the obvious data types which my
-27:25
-code will deal with and I have the separate mental list of all the imagined behaviors I want in my program all the
-27:31
-the functionality I imagine it to have and then what object-oriented ideology demands is that I take all my behaviors
-27:37
-and I somehow associate each one with one of my data types inevitably what this means in any non-trivial program is
-27:43
-I'm actually going to have to introduce all sorts of additional data types just to be these containers for certain
-27:49
-behaviors which otherwise don't Naturally Fit with any of my obvious data types the data types I knew I
-27:54
-actually wanted because they represent actual data I need in fact as programs get larger and larger in objectoriented
-27:59
-code it tends to be that these unobvious unnatural data types tend to actually predominate you end up with majority of
+bringing a hedge trimmer and and for the myriad of other choices that you made without even realizing you had the
+26:33
+option to do differently as your eyes glaze over you hear someone call to your friend through the phone turns out your
+26:38
+expert friend has an expert friends of their own and they're all helping each other i thought I was meant to figure it
+26:44
+out on my own you cry but your friend asks whatever uh gave you that idea to
+26:49
+be completely fair I've learned almost exclusively everything mostly by myself or attempting to read what I can on the
+26:55
+internet the startup I did was long before I ever had a real job when I went to my first real job I just jumped in
+27:01
+and started just making decisions for them because I thought some of their things were bad and they liked it and they said "Keep making the decisions."
+27:07
+I've never really fallen into the position where I've had a good mentor for coding like there's one guy I can think of that kind of did it but he was
+27:15
+straddling the line between manager and coder and he didn't find that line good at all but he did try and so we kind of
+27:22
+did that for a little bit but I've just mostly lived the life of just solitary try to learn how to code right he's
+27:28
+talking about heed race things you shut up pick you ask how you two can get a network of peers who can help you
+27:34
+through the maze that's a rarity just so you know this is a rarity more than anything else your friend says to join
+27:39
+some online chat rooms unfortunately for you they're all speaking inco incomprehensible jargon or debating uh
+27:45
+optimal twine spooling techniques experts often either have a network of people by the way if you do join my
+27:51
+discord I don't know if you're going to get people talking about expert twine optimal debating they
+28:00
+can quickly distinguish useful insights from helplessly generic summaries and don't have to spend much time looking for the information they are after but
 28:06
-so-called data types which really aren't there because they're representing data they exist simply as attacks to conform
-28:11
-to this ideology about code modularization very quickly we end up in what Steve Yi called the kingdom of
-28:17
-nouns where every aspect of our program has to be reconceptualized as not just mere Standalone verbs you know functions
-28:23
-they have to be reconceptualized as nouns things that represent a set of behaviors and so what we get in our
-28:30
-objectoriented code bases are all these service classes and manager classes and other what I call doer classes these
-28:36
-very nebulous and Abstract entities even when dealing with data types and behaviors that are relatively
-28:42
-concrete which have fairly visible connections to the functionality apparent to actual uses of the program
-28:48
-even here the matchmaking game constantly presents us with these obnoxious philosophical dilemmas in
-28:54
-object-oriented analysis and design we constantly have to ask ourselves stupid questions like should a message send
-28:59
-itself because maybe instead we should have some sender object which sends messages or wait a minute maybe there
-29:06
-should be a receiver object which receives messages or a connection object which transmits messages so very quickly
-29:13
-the real world modeling which object-oriented programming promises becomes a Fool's game where there aren't
-29:18
-any real good answers in my experience objectoriented analysis and design very quickly becomes
-Analysis Paralysis
-29:24
-analysis paralysis if you take the ideology seriously as I did you're going to waste a lot of time Heming and
-29:31
-Hauling about to conceptualize these elements of your program object-oriented programming is generally sold to
-29:36
-students on the basis of these trivial examples that neatly model real world taxonomy but what we get in practice
-29:43
-from object-oriented analysis and design is a lot of very abstract excess structure with no obvious real world
-29:50
-analoges note here that programmers have their own peculiar definition of abstract when programmers talk about
-29:56
-abstraction they're generally talking about about simplified interface over complex inner workings what's odd about
-30:02
-this is that in more General usage abstract has a connotation of being hard to understand something which is
-30:08
-abstract has no resemblance to the things of common daily life and it turns out that most things which programs do
-30:14
-are abstract in this sense and so it shouldn't be surprising that we have great difficulty conceptualizing the
-30:20
-components of a typical program in terms of neatly self-contained modules particularly modules which have any real
-30:26
-world analog when we pollute our code with generic entities like managers and factories and services we're not really
-30:33
-making anything easier to understand we're just putting a happy face on the underlying abstract business and for
-30:38
-every excess layer of abstraction we're getting more abstractness in attempting to neatly
-30:44
-modularize and label every little fiddly bit that our program does we're actually just making our program harder to
-30:50
-understand something that happens all the time when I look at object-oriented code bases is that I'll try and find the
-30:56
-parts in code that Cor respond to some user visible functionality but trying to find the functionality going by Clues
-31:03
-from the names of classes and the names of methods tends to be very misleading very typically my expectation that
-31:09
-functionality X would be in the class named X turns out to be wrong because the abstract nature of what we typically
-31:15
-do in programs generally necessitates that functionality is not going to be self-contained it's not going to neatly fit into one neat module and so the
+novices have no clue about how to distinguish the two nor how to find the communities who can help them effectively eventually you finish the
+28:13
+maze not wanting to repeat the experience of being a complete novice and you dedicate yourself to learning
+28:19
+more to and to not failing ill to the traps of being a novice but how exactly should you do that to have as a novice
+28:25
+you need to find a sympathetic expert on your side to help you out and to whom you can ask all questions regardless of
+28:32
+how trivial the questions might be i do think if you can find someone that will help you become better it's probably
+28:37
+it's probably better but I would make I can I make an argument can I make a counterargument to that if you can't
+28:44
+identify how to solve problems well who says you can identify an expert that is
+28:49
+worth listening to checkmate atheist why don't you go tip that fedora somewhere else reddit tier atheism i
+28:57
+just owned you with facts logic and theology uh anyways a replacement for
+29:03
+this finding uh a lot of experts so you can spread the the load amongst them what uh you could go very far online
+29:10
+nowadays and even more so with AI tools but many of the above trappings that novices succumb to uh to do not
+29:17
+magically dis uh disintegrate because you have access to the internet or to a
+29:22
+chatbot you still don't know how to recognize the subtle decisions you still don't know how to distinguish good ideas
+29:28
+from bad you still don't know how to avoid long-term cascading or cascades due to bad choices the internet helps
+29:34
+for sure but having someone by your side is monumentally better and I would also argue that I mean I would argue a the
+29:42
+cascading of bad decisions is not is is just not something you can avoid it's just
+29:48
+simply something that you make it a longer path until it cascades into bad
+29:54
+decisions like that's all it is also something that I think is kind of being missing here which is origin of
+30:00
+idea i know I I kind of alluded to this earlier if you cannot originate the idea
+30:06
+meaning that you can apply what you've previously learned you haven't learned something yet if you need to
+30:12
+continuously keep on getting help or getting guidance you're not applying what you previously learned you're just
+30:17
+not you're you need to be able to originate that that's like a good first step is that you start taking your
+30:23
+originations apply them find where they're weak reorinate the idea apply it
+30:28
+and see where it's weak where it's weak see where it cascades one thing that can be tricky to convey to your friendly expert is that sometimes you just need
+30:34
+to be able to show them what you're doing without any specific question in mind i often found that I can feel
+30:39
+uneasy about what I'm doing and then talking with an expert friend will quickly surface that I've made some error that will cause pain later having
+30:47
+someone who's happy to spend time just talking without any specific goal to solve will go a long way yeah there's um
+30:54
+I I have this somewhere on my channel where I did a talk with Casey Mor Miratori about just like how to go about
+31:00
+game design and that was super helpful and he just told me like hey here's some things he would do and it was just like
+31:06
+great for me i applied everything he said and I didn't know how to apply it and I had to kind of like reapply it a
+31:12
+few times but it was honestly a really great like like way to do something and
+31:17
+now I just like still I keep it in my head all right the let's see in the workplace this style of just talking
 31:23
-class which is called X will very superficially relate to X but then all the real work is done elsewhere
-31:28
-scattered throughout the code this makes me question what is the value of having a class called X if it doesn't really
-31:34
-contain all the business of X what this class X really represents is actually misleading code structure and how is
-31:40
-that helpful how is that conducive to understanding of your code base the other reason I have this
-31:45
-problem reading code bases and trying to track down where functionality actually lives is because object oriented design
-31:51
-tends to fracture functionality in our code it tends to take what otherwise could be relatively self-contained Cod
-31:57
-code and split it up into many separate methods across many separate classes typically often in many separate files
-32:03
-for God's sake this fracturing is accepted because of an ideology about encapsulation and this notion of classes
-32:11
-and methods properly having so-called single responsibilities and there are certainly valid Arguments for that idea
-32:17
-certainly it is much easier to get a small short function correct than to get a large sprawling function correct but
+interaction between noviceses and experts is critical for knowledge transfer and training but novices rarely have a voice with key decision makers
+31:30
+and so promoting these interactions is often neglected it is not sufficient to instruct senior employees to answer the
+31:36
+newcomers questions since the vast majority of learning comes from novice watching how the experts applies their
+31:42
+skills i think that's supposed to be applies and not from direct questions and answers what makes the scenario even trickier is that the experts will likely
+31:48
+think just talking interactions are basically worthless but answering concrete questions feel much more useful
+31:54
+the novice on the other hand could likely discover answers to concrete questions on their own given enough time
+32:00
+but developing the intuition that comes through while an expert is just talking with a novice is incredibly valuable to
+32:06
+the novice this explains the difficulty of training new employees when all your experts are working remotely as remote
+32:12
+work practically eliminates that sort of casual unguided water cooler interaction i actually I actually fully agree with
+32:18
+this by the way there is something magical about there is something just that's different about in person i think
 32:24
-the important question is that in splitting a code up into many little small methods and to many separate classes are we actually decreasing the
-32:30
-total complexity of our program or just displacing the complexity just merely spreading it around in either case
-32:37
-there's this attendant trade-off we're making where by splitting up larger units of code into many smaller ones
-32:42
-we're greatly increasing the the so-called surface area of our code where I come along and I look at your code
-32:47
-base and I try and get a foothold and everything split up into these tiny little units these tiny little packets of code reading this kind of code often
-32:55
-feels frustrating in the same way it can be frustrating to eat a bunch of little candies that are all individually wrapped and when all your methods are
-33:01
-really really short you end up having to jump all around the code to find any line of logic a lot of business that
-33:06
-otherwise could be neatly sequentially expressed in longer methods gets artificially split up so it feels like
-33:12
-you've taken a neatly sorted deck of cards and throwing them into the air so you can play 52 card
-Procedural Code
-33:19
-pickup okay so if you're not going to be writing objectoriented code what are you going to be doing instead you're going to be writing procedural code but what
-33:26
-does that look like well as I mentioned at the beginning this doesn't necessarily mean you need to avoid classes entirely if you have a language
-33:32
-like python or C++ where you have both straight functions and also classes there are some cases where the
-33:38
-association between your data types and certain functions is really really strong that it fits some organizational
-33:44
-purposes to just explicitly associate them together by making those functions methods of that type the most obvious
-33:50
-example would be adts abstract data types things like cues and and lists and so forth the key thing to keep in mind
-33:57
-however is that the moment you start Heming and Hauling about whether this particular function really has a primary association with that data type that
-34:03
-should be the moment you say screw it will make it just a plain function because it turns out that most things we do in code tend to be crosscutting
-34:10
-concerns they don't have necessarily special obvious relationships with particular data types they might concern
-34:16
-more than one data type and that's why you should generally prefer functions so you don't have to play this silly game of matchmaking functions to data
-34:23
-types so we're going to be writing our code primarily out of plain functions and we're not going to attempt to
-34:29
-encapsulate the state of our program at A fine grain level because it doesn't work however shared state is still a
-34:35
-problem and if we're not careful it can get out of hand we can't totally solve the problem unless we do pure functional
-34:41
-programming but short of that there are broad guidelines we can follow to mitigate the problem first off whenn and
-34:47
-doubt parameterize this means that rather than passing data to functions through Global variables you should
-34:52
-instead make that data an explicit parameter of the function so it has to get explicitly passed in
-34:58
-as much as possible we want data access in our program to flow through the call graph so anytime you're tempted to pass
-35:04
-data to a function through a global because it seems more efficient or maybe just more convenient you should give that a strong
-35:11
-reconsideration secondly whatever globals you do end up within your program it could be slightly helpful to group them logically into data types
-35:17
-even if this means you effectively have a data type with one instance in your whole program this little trick can often make your code seem just a little
-35:23
-bit more organized in a sense you're just using data types this way to create tiny little subname spaces but if you do
-35:29
-a good job logically grouping your globals this way as a side benefit this can complement rule number one because now you can more conveniently pass this
-35:35
-Global state to functions by bundling your data together into types you typically cut down on the number of
+you can learn more and I do think that the people that get affected the most by remote work are inexperienced people
+32:32
+because the barrier to reaching out is higher i think the it it's harder to get in front of
+32:38
+somebody i think there's a lot to it that is most certainly not I'm not saying remote work is bad i think
+32:43
+there's a lot of good parts to remote work i remote worked at Netflix for the last four years of Netflix i'm not saying it's like a horrible thing but I
+32:50
+could definitely tell I also missed out on a lot of just stuff that's hard to say i just wasn't as effective i was
+32:58
+still pretty effective it just wasn't quite the same netflix by the way pick in case you're pick if you're wondering
+33:03
+as Netflix by the way in case you're wondering just in case something you can independently and possibly it's the best done without expert supervision is
+33:10
+exploration of the field you know nothing and have no basis about what may or may not be useful anytime you've come
+33:15
+across something that feels like it has uh some depth to it such as well-written essay series or a deep technical dive
+33:21
+you need to invest heavily into it as a novice your one advantage is that everything is new and nobody expects you
+33:28
+to be fast because of this you can afford to spend time to learn as much as possible by the way I love this take
+33:33
+advantage of this every single job you go to every single time this is like this is so good uh I honestly don't
+33:39
+think it's possible to overdo this spending a week exploring some specific arcana of your field is probably going
+33:46
+to pay dividends uh because all of a sudden your expert level in this tiny aspect of the field you can go
+33:51
+head-to-head with an expert okay maybe that's like a little Okay maybe that's a little overstated if you can spend a
+33:58
+week and you can become an expert you're either learning something that's exceptionally shallow or the experts are
+34:04
+idiots i'm just throwing it out there low expectations are your advantage
+34:09
+absolutely or the or the field is one week old also true since they last read
+34:14
+about the weird subdomain 5 years ago don't study the common things and go all in on a niche pockets the common things
+34:21
+are common enough that you learn them through osmosis regardless of what your main activity is but the niche things
+34:26
+require active study and ignoring the niches is how you remain a novice very good also it's like the it's the
+34:33
+specialty of a generalist is to not is to know how far into the niche you delve right very very important amongst
+34:42
+all of this the novice needs courage to make decisions without knowing the consequences and confidence so that they
+34:48
+wholeheartedly commit to their decisions and grant them the greatest chance of success these traits are not trivial and
+34:54
+confidence can easily be crushed by a snide comment from an expert i don't want to imagine how many promising noviceses have been spurned by
+35:00
+unimpressive experts in this way advice from a soul-hearted expert is worse than no expert advice due to all the risk of
+35:06
+destroying the novices's confidence by the way I'm giving every person that has this inability to to be
+35:13
+able to live their own life without someone just crushing them i'm giving you the permission right
+35:18
+now to stop it stop it okay seriously stop letting one person
+35:25
+destroy you because you think them an expert this is just the strangest part of life is that there is always a group
+35:32
+of people who once unencouraged remain unencouraged don't let that happen like you know there's I
 35:41
-parameters which functions have to take though do be careful there is an art to how you logically group things
+I always had this thing where I I would complain with uh I went back and forth with who who maybe still is but he was
 35:48
-together the third guideline is to opportunistically favor pure functions even if you're not explicitly working in
-35:53
-a functional style or working in a functional language if you see an opportunity to make a function pure it's
+like the vice president of inclusion diversity at Netflix i used to go back and forth with him talking about all like just interesting problems he was
+35:54
+kind of he was a fun guy to talk to i actually had a lot of fun talking to the guy uh and one time he was telling me
 35:59
-generally good strategy to take that opportunity again pure functions tend to come in at efficiency cost but the
-36:04
-brilliant thing about pure functions is that they're the only truly self-contained unit of code when I'm reading and writing a pure function I
-36:11
-don't have to think about anything else I can just consider that function entirely unto itself therefore they tend
-36:16
-to be easier to understand and to make correct the fourth guideline is that we
-36:22
-actually should try to encapsulate our code only in a very loose General sense at the level of namespace is packages
-36:28
-modules whatever your language has so when I'm working in goang for example I think of each package as having its own
-36:34
-private State and then a public interface I find that encapsulation at this course grain level tends to work
-36:40
-because you're typically dealing with much larger units of code than the supposedly ideal classes of object-oriented programming the typical
-36:47
-goang program is going to have not that many packages maybe like 10 at the high end and structuring a mere handful of
-36:52
-elements into hierarchy of encapsulation is reasonably doable when it turns out during development that oh wait I have
-36:58
-some cross cutting concern of my packages and so we're going need to violate this perfect hierarchy of encapsulation again it's not such a big
-37:05
-deal because you're dealing with a relatively small graph of objects all the basic problems of encapsulation are
-37:10
-still there it's just at the corar grained macro level the problems are reasonably
+the difference between diversity and inclusion is diversity is inviting people to the dance and inclusion is
+36:05
+getting asked to dance and so I said I think he's fundamentally wrong i think
+36:10
+that he's wrong on both aspects to that and I said the single most important thing is that nobody gets asked to dance
+36:17
+if you want to be included you have to ask to dance and if you think and you wait and you wait for somebody else to
+36:24
+be the one that rescues you and brings you in you are going to wait on the sidelines for the rest of your life and
+36:30
+it is stupid to sit there and wait like don't wait for someone else to open the door you take your foot you first place
+36:38
+it behind you you harden your core and swing with all of your might and you kick the effing door down okay stop
+36:45
+being a [ __ ] and just toughen up you got to do it because or else you're going to wait to be asked to dance you
+36:51
+know why you know why cuz the reality is that nobody's inclusive okay people like
+36:57
+being around people that are like them like this is a just this is a common human experience in every society and
+37:03
+they will stop they people will not invite you in this happens over and over and over and over
+37:09
+again people don't invite other people in this is like a common normal thing
 37:15
-manageable the last guideline is that you shouldn't be scared of long functions for a long time now
+and when people are like "Oh I only hang out with people with different opinions." It's a group of people being like "We only hang around with people
 37:20
-programming students have been advised to when and doubt chop their code into smaller and smaller functions but doing
-37:26
-this has significant costs that are tradeoffs it turns out that most programs have these key sections where
-37:31
-most of what the code is doing is a long laundry list of stuff and what we're told to do in these scenarios is write
-Functions
-37:37
-functions like this where all the business has been extracted out to separate functions the problem with
-37:42
-doing this pervasively is that what was naturally a logical sequence of code and was otherwise written in sequence top to
-37:49
-bottom is now spread and out of order throughout your code base obviously in cases where the business extracted to a
-37:55
-separate function is something that you want to call in multiple places that's a very good reason to have a function but
-38:01
-if all these functions were just called in this one place I would generally prefer looking at code where the business of those functions is just done
-38:07
-in line and if we want high level documentation of what's going on in my funk here then you just put what I would
+with different opinions we're so unique." Okay sure you are there's very few people that somehow can floss that
+37:27
+line because this these these worlds don't really exist they don't i want them to exist but they don't they're
+37:32
+hard but I I mean that in the nicest possible way which is that it's extremely difficult to be a part of a
+37:38
+group and I know I I know people are going to tell you that everything should be nice in the real world it's not nice
+37:44
+you got to ask the dance if you're not willing to make that it's going to be really hard for you to
+37:50
+get into into any group you have to network you have to take the active stance in your life and when someone
+37:57
+tells you you can't there's kind of like a different there's kind of like a a few different ways you can kind of approach that some people when they hear that
+38:03
+they just stop trying there's some people that when they hear that they take that and use it as like anger or
+38:09
+I'm going to prove that person wrong or there's some people that hear that and they're not motivated to prove the
 38:14
-call a section comment denoting what each section of the code does in this Arrangement the sequence of the business
-38:20
-is totally clear and when I'm browsing the whole codebase when I'm looking outside this function there's less clutter because there are now fewer
-38:26
-functions I have to look at and Wonder well hey where is that called I wonder what that thing does it also has the
-38:31
-advantage of letting us avoid having to name functions naming stuff is really important in code but it's really really
-38:36
-hard to do well and in general I find it preferable if we can avoid naming entities as much as possible in this
-38:42
-arrangement we don't have to think hard about what to call these functions we can just have a comment line and have a full English sentence which generally is
-38:48
-better at conveying accurate meaning and also is simply easier to write if for whatever reason it doesn't
-38:54
-seem adequate to Simply comment a section rather than extract it to to a separate function the next best thing is
-38:59
-to make it a private function a nested function such that it's clear this function is not called anywhere else
-39:05
-it's only called within this function in this arrangement I as a reader of your code coming from the outside I'm still
-39:11
-presented with a smaller surface area fewer entities in the code and so it's just easier for me to get a
-39:16
-foothold now when you do write functions which are hundreds if not thousands of lines long you still should keep in mind
+person wrong they're just more motivated that they can do something that someone can't like that I'm not here to prove
+38:21
+somebody wrong i believe that I can and I want to believe in myself and I do think the third part the third version
+38:27
+is the best version which means I'm not here to just simply be someone that's always fighting against somebody else
+38:33
+i'm somebody that's fighting against myself always trying to be the better version and when someone says it's not
+38:39
+possible I'm going to say I can i can do that right and so I I try to always have that in my head which is that I want to
+38:45
+be the person who it doesn't matter what anybody else says when everyone says "Hey you're really good at this." I want
+38:51
+to go "Okay maybe I am maybe I'm not." When someone says "You're really bad at this." I go "Hey maybe I am maybe I'm not." I'm going to constantly try to go
+38:58
+after what I want to go after i just had a deep realization that I don't include myself in groups even when I want to
+39:03
+reason I feel like sometimes I would be intruding in their space and make them feel uncomfortable yeah and maybe you
+39:09
+maybe you maybe you do but just like everything else just like this entire article talks about more on the
+39:15
+technical set of skills the first I mean this is why I'm like 98% sure that most
 39:21
-General guidelines about code readability basic things like not strain too far from the left margin for too far or for too long you know you don't want
+people that call themselves neurode divergent are literally people who don't practice social skills and then wonder why they're bad at it the first time you
 39:27
-to have code that's indented in eight levels because it gets really obnoxious scrolling up and down code if you have to scroll over for one thing and also it
+join a group you're just not good at it this is normal there's nothing weird about that you're weird because you've
 39:34
-tends to just imply there's a lot of busy logic in this part of code and it gets confusing so likewise you also need
+never done it just like you're not good at programming because you've never done it like that's it that's not a bad thing
 39:40
-to look out for parts of functions where the logic's just getting too complex the first thing to do is of course to try
+that's a normal that's just a standard world thing and if here's the thing is
 39:45
-and simplify your logic but failing that there are going to be cases where hey we should just split this off into a separate function so it's more neatly
-39:51
-self-contained complexity the other concern with longer functions is that as your function gets
+that you could do you could be a very socialable person at one point in your life and then later on stop doing it for
+39:50
+a years and then realize you're not good at it anymore it's just like everything else i'm no longer good at table tennis
 39:57
-longer and longer you tend to ACR more and more local variables so what you want to do is hopefully your language
-40:02
-allows this you want to try and constrain the scope of the local variables so that they don't exist for the full duration of the function but
-40:08
-rather for subsections this way either read of your code when I scan up and down the function I don't have to think
-40:14
-about all the variables for the whole duration of the function the way this is done in most curly brace languages is
-40:19
-you can just introduce a new Subs scope with curly braces so here for example this integer X variable only exists
-40:24
-Within These curly braces when you have subset sections of a function which you are commenting it's generally a good
-40:30
-idea to whenn in doubt enclose them in curly braces this gives readers of the function an assurance that variables
-40:35
-from the preceding sections don't fall through to the following sections and so in later sections we don't have to think
-40:41
-about the variables that were used above where possible the even better
-40:46
-thing to do is to enclose these local Scopes in their own Anonymous function that's then just immediately cold and
-40:52
-the advantage here within the nested function is that it's not just its own Subs scope but also within this Anonymous function it's guaranteed that
-40:59
-any return is not going to return out of the enclosing function it'll return just out of this enclosed function and so we
-41:05
-have a stronger guarantee that the logic of the subsection is self-contained from the enclosing
-41:10
-function unfortunately what I often really want when creating subsections of longer functions is a feature that
-41:15
-doesn't exist in any language I know of it's an idea I've only seen in one other place it was Jonathan Blow and his talks
-41:21
-about his programming language that he's making and the idea is that we want something like an anonymous function
-41:26
-which doesn't see anything of its enclosing scope the virtue of extracting a section of code out to a truly
-41:32
-separate function is that everything that comes into the function has to be explicitly passed to a parameter it
-41:38
-would be great if we could write inline Anonymous functions with the same virtue specifically what I would propose is
-41:44
-imagine we had a reserved word use that introduces a block and in the header of the use we list variables from the
-41:51
-enclosing scope which we want to be accessible in this block but otherwise anything from the enclosing scope would
-41:56
-not be visible visible these listed variables however would really actually be copies of those variables so if you
-42:02
-assigned X or Y here in the scope you're assigning to X and Y the local variables of this used block not to X and Y of the
+not because I'm not because I'm like some unique human that got bad over time no I got bad over time because I'm like
+40:04
+every other human you know it does make life harder when all you ever do is communicate via
+40:10
+text it makes it harder to have an in-person conversation right it just does by by the very definition of that
+40:16
+it's not I'm not right it's a prime with the it's all in your head argument that's a lot of life is it's all in your
+40:22
+head now I mean I have some real friends who actually have real like that are real neuro neurode divergent and they're
+40:29
+at a clear disadvantage in life right they're at a clear disadvantage
+40:34
+and they have to go through a lot more to do stuff i'm talking about the 98% of Twitter people that have the word
+40:40
+neurode divergent in it and that's because they're just socially awkward they're like "I have autism i'm just awkward." You're like "You're not
+40:45
+awkward dog you're not awkward you're unpracticed." And there's a huge
+40:51
+difference between the two okay stop confusing someone's like really hard
+40:56
+life situation with you being awkward all right anyways sorry I went on a weird tangent just there the downside to
+41:02
+this mindset is that it's easy to disregard other people's hardships because it starts to look like everyone's at their own fault if they
+41:07
+ever fail so I think the thing you're confusing is very very simple and very very straightforward and I'm glad you said that so let me just try to uno
+41:14
+reverse you just a little bit okay the thing is is that you obviously can't control every circumstances
+41:22
+sometimes funding runs out and you can no longer work on it and maybe you did fail the company in some aspects but
+41:28
+also you just did weren't given enough time to solve the product maybe there was people that truly were jerks and you're not just the jerk thinking
+41:34
+everyone's a jerk and that's that right there's like there could be a whole set of situations that failure was outside
+41:40
+of your control absolutely but if for any reason you look at those
+41:48
+things and think ah failure was out of my control i think that that
+41:55
+mentality is in fact a h 100 times more dangerous than whatever you are trying
+42:01
+to protect against this kind of feels like that whole like it's it's this overprotective overcoddling idea that oh
 42:09
-enclosing scope which is the effect you get with a truly separate function right you assigned to the parameters of a
+we better not let people feel these certain things because if you do my gosh they could use it as a weapon to like be
 42:14
-function you're not modifying what was passed to the function you're just modifying those local variables that's the same thing we want in this use block
-42:21
-furthermore a Ed block should itself return values so you use return inside the use block and it doesn't return from
-42:27
-the enclosing function it returns from the use itself the use is an expression and so we can return values from this
-42:32
-use and assign them to this variable a so in effect we'd have this block of code which is as neatly self-contained
-42:38
-as a separate function however it is written in line and so it's very very clear that oh this is a piece of code
+mean to somebody else and you're just like true but that's not what anybody was saying selfaccountability is
+42:19
+extremely important and I think you should always be as accountable as possible in fact I think it's better to be over accountable than under
+42:26
+accountable and at the end of the day if you take your measurement stick and you
+42:31
+use it as a means to beat somebody else you will quickly realize or you'll die a
+42:37
+loser you will realize that you in fact don't even live up to your own measurement stick and that you often
 42:44
-that's only used in this one place you don't have to go look for it elsewhere and also we don't even have to give it a
+fail from it as well and so no I don't care if somebody uses this as a as a jumping board or a springboard to become
 42:50
-name instead we can just put a section comment header before the used block and that is generally much better for
-42:55
-containing the actual intent of this block code if later down the line we decide that this block of code actually
-43:01
-should be extracted to its own proper function that's a very easy thing to do you could have an editor convenience that does that for you automatically
-43:07
-it's already clear what the parameters and the arguments should be all the programmer would have to do is provide a name for the new
-43:14
-function so anyway it'd be nice if language has had this feature unfortunately I don't know of anyone that does but regardless you shouldn't
-43:20
-be so scared of long functions they actually have their place in most code bases
-43:29
-at the very least I hope I can get you to try procedural programming it doesn't really matter what language you're in if
-43:35
-you're in Java or C you can write procedural code you can break the rules but if you've ever felt any of the
-43:40
-paralysis that I felt attempting to do objectoriented programming properly to square the circle I think you'll find
-43:46
-abandoning all those ideas and just reverting to procedural code to be a liberating experience I can tell you
-43:52
-from personal experience of having read these books that you don't need to read them they don't have answers they're not going to score the circle and you're
-43:58
-going to waste productive years of your life trying to live up to their ideals I'm not saying there's nothing to these
-44:03
-ideas there are bits and pieces that have value test driven development for example has some interesting ideas there's value in testing but that's part
-44:10
-of the problem is that kernels of good ideas have been taken to holistic Extremes in a way that I think has been
+a jerk because yes that's going to happen no matter what you do but it's a thousand times worse for people not to
+42:57
+constantly strive after their own self-accountability i am a thousand times more willing to bet on the
+43:03
+self-accountability than I am to be careful of somebody else's feelings right because we all have the jerk inside of us and if you if we do the
+43:11
+opposite of everything I say there will still be a jerk on the other side there's always a jerk there's a jerk in
+43:16
+all situations every single every I mean there's a reason why it says good like
+43:22
+hell is paved with good intentions is it has nothing like it it's actually a
+43:27
+pretty good phrase i normally hate a lot of these phrases i think hell is also paved obviously the path to hell is also
+43:33
+paved with a lot of bad decisions and all that but regardless of all those things there's also a lot of uh what's
+43:39
+it called there's also a lot of just things you attempt to do good that end up being
+43:45
+bad and it's not that you like you know like that time you could have said something that would have changed
+43:50
+somebody or you would have called out somebody for doing something that you really didn't like but instead you would rather be kind of nice and you're like
+43:57
+ah you know what i'd rather be a nice guy to this person maybe they're a little bit down and maybe we just don't need to say these things to this person
+44:04
+so you never say anything and then that person goes on and continues to make that mistake were you better or worse to
+44:09
+that person well it's an impossible question to answer but at the exact same time you could have very well been worse
 44:15
-disastrous for the industry and certainly for programming education there are very few solid holistic
+to that person you with good intentions could have made somebody's life worse they have to go learn from their mistake
 44:20
-answers about how we should write code we'd all be better off if we stopped chasing that Chima
-
+again the lack of consistent empathy between experts and noviceses would suggest that despite feeling easy it is
+44:26
+in fact difficult i've written more about this here in the extreme case the lack of empathy leads uh to experts
+44:32
+deriding the work of noviceses as not having the prestige class taste status expressed so deafly by the work of the
+44:39
+experts this self-fulfilling no let's see this is self-fulfilling novices will either conform to the experts sense of
+44:45
+aesthetics dismiss the field of study as not for them or in rare cases work incredibly hard to prove experts wrong
+44:51
+after all and in this last case the novice becomes the an expert anyway experts tend to have an aesthetic
+44:57
+preference towards technically challenging work rather than simple but interesting work and I have written more about this phenomenon as experts
+45:03
+aesthetics that's interesting i like the I like this closing thought i think there's probably a little bit more as I said you don't have to prove people
+45:09
+wrong sometimes you just want to become better right when someone says that they've been dismissed their goal isn't
+45:14
+to prove somebody wrong but I want to be better and that can be you know that can be motivating that can be motivating for
+45:20
+some amount of people anyways uh this hasn't been my experience with most experts a lot of the ones I've encountered are humble and curious yeah
+45:26
+I mean I think that that you're a lucky person i think some people have had some bad ones uh glad it gave some food for thought no it was great this was a great
+45:32
+article i I enjoyed this article quite a bit i think there's a lot to this and there's a lot to talk about but at you
+45:40
+know my big worry the biggest worry I have is a I don't want any novice to ever consider themselves helpless and
+45:45
+only a victim to what the expertness of an expert i think that it's it's really comes down to just I think that the
+45:52
+fastest way to avoid being a novice is just hard work and you know what if no
+45:58
+one can tell you you're right or wrong I'm going to give you a little secret the thing that you write and the code
+46:04
+you produce will eventually tell you if you're right or wrong it will because you will find
+46:10
+yourself having this exceptionally hard time adding more things to it and you're like "Why is everything falling apart it
+46:16
+started off so easy and now it's like when I add something it's so hard what have I done?" Try to learn from that can
+46:23
+you take something out and rework it to make it easier code never lies code
+46:29
+never lies ever it does exactly what you say it should do and when it doesn't
+46:34
+work guess what that's because you're you're bad at it when it doesn't do what you want to do race conditions are a lie
+46:41
+false race conditions are a truth that you created right you created that condition
+46:47
+and now you get to deal with the consequences dude threat like threading race conditions are just like the worst data races do you think it's uh we came
+46:55
+up with programming without the internet like this no easy answers yeah i mean I started to learn how to program before
+47:00
+there was Stack Overflow and so I I think the thing is I do Dude I love by the way I love lies damned lies and
+47:06
+statistics LLMs i love that answer uh but but seriously I do think there is probably something to that when you had
+47:12
+to learn and there was no Stack Overflow what do you do there's a lot of
+47:18
+people that can't even imagine a world without a quick Google search books yeah i mean I used to have to program a bunch
+47:25
+of Java you know what I had to do read the Java docs right just keep on reading docs until you just
+47:31
+magically find something because like one thing that was really hard is I didn't even know the word
+47:37
+tokenizer was what people used so I just started looking up the word string over
+47:42
+and you know looking through all the string string string string string string string to token token tokenizer what's a token you know you have to just
+47:48
+sit there and just read the entire entire doc I read so much Java 1.6 six
+47:55
+dude it was insane it was actually insane all right anyways all right this
+48:00
+is great the name is the You know what don't ever think you're done learning again yeah
+48:07
+that's a good ending i'm happy with that ending bye
