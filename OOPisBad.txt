@@ -1,0 +1,900 @@
+0:04
+when I say that this video is probably the most important programming video you're ever going to watch it's partly because what I'm going to tell you is
+0:11
+distinctly a minority position among programmers probably 5% or under programmers will tell you that
+0:16
+definitively objectoriented programming is just not a good idea and in fact is going to lead you astray uh maybe you'll
+0:22
+have another 20 30% of programmers who will hem and ha and say that it has some virtues and some weaknesses and it might
+0:27
+be better applied to some problems than others I'm not telling you that I'm telling you definitively no objectoriented programming doesn't fit
+0:34
+any problem and you shouldn't take it seriously this is almost certainly not what you were told in school if you
+0:40
+attended a programming course in the last 15 years or you read most educational materials about programming the the pervasive default assumption is
+0:47
+just well objector programming is the right way to go and it's just a settled matter so I reiterate this is probably
+Outline
+0:53
+going to be the most important video you watch about programming because it's going to tell you something you're not going to get from a vast majority of
+0:58
+other sources first off I'm going to try and make clear exactly what I'm complaining about
+1:04
+and what I'm not complaining about uh and then I'm going to try and explain well what is objectoriented programming really because if we don't nail that
+1:09
+down it's almost impossible to criticize and then I'll try and account for well if objectoriented programming isn't good
+1:15
+why does it dominate the industry that's kind of an important question actually uh and then I'll actually get into well
+1:21
+why does object oring programming not work what's bad about it and then lastly if I'm telling you to not program in an object-oriented style then what do you
+1:27
+do instead what is the alternative it's called procedural programming but what does that look like
+1:32
+exactly so what are the problems with object-oriented programming well first off the problem is really not classes
+Problems
+1:39
+per se that is I think it's actually possible to program occasionally with classes in a way that's fairly benign I
+1:45
+don't think it's particularly beneficial but uh for aesthetic reasons it might uh
+1:50
+seem more pleasing to have an explicit association between certain functions and certain data types doing this
+1:56
+pervasively though as I'll make clear is a really bad idea that's where everything goes wrong is when you try and shove every function of your code
+2:03
+every Behavior into an association with a data type that leads to disaster secondly I don't think the
+2:09
+problem with object-oriented programming is about performance I recommend you watch this talk by Mike Acton called
+2:15
+Data oriented design in C++ he makes some very interesting points and provides some insight into that world of
+2:20
+programming which most of us don't do but I think he overstates his case fine there's a lot of software out there that
+2:25
+should be written with much more regard for performance but I think there's tons of software that just really doesn't
+2:31
+apply you'll also hear complaints about excessive abstraction uh from generally
+2:36
+the same people people like Mike Acton and again here I think they're overstating their case I think abstraction is actually a worthy goal in
+2:44
+practice most abstractions aren't good it takes a long long time to develop good ones and as I'll explain a major
+2:50
+problem with obori programming is it does tend to produce abstractions that aren't any good that's the real problem
+2:55
+not the idea of abstraction itself another interesting talk to watch is won by adner coimbre called what
+3:02
+programming is never about and the thing which he says programming is never about is code prettiness how code looks
+3:08
+Aesthetics his main point is that programmers typically Focus too much on Surface concerns about their code rather
+3:14
+than stuff that really matters I think though he actually simply misstates his case or or rather his thesis doesn't
+3:21
+really follow from his arguments which are generally valid I think when really pressed he would admit that Elegance
+3:28
+Simplicity flexibility readability maintainability structure all these things you might file under code Aesthetics I think he would admit
+3:34
+actually do matter but I think the more accurate way to spin his point is that these surface level Virtues Of code are
+3:41
+good things and actually important but object-oriented programming and abstraction heavy programming in general
+3:46
+fails to deliver them in fact it provides just the illusion of these things object-oriented programming is
+3:51
+sold on the basis that it supposedly provides these things but particularly Simplicity and elegance it actually
+3:57
+makes things worse lastly be clear that I'm pushing procedural programming not necessarily
+Functional Programming
+4:03
+functional programming which is a different thing as I will make clear in a moment I happen to think that
+4:08
+functional programming actually is the future of higher level code I think it may actually be the default way we
+4:14
+program at a higher level in 10 years from now or something but there are serious efficiency problems that make
+4:20
+functional programming not really viable in certain domains of programming and so my message is whether your code ends up functional or imperative that's a
+4:27
+separate matter regardless your code should be procedural rather than
+4:32
+object-oriented so it's a good time now to to make clear exactly what are the competing paradigms of programming that
+Programming Paradigms
+4:38
+we're really talking about there are four main possibilities your code can first to be both procedural and
+4:44
+imperative procedural meaning that you have no explicit association between your data types and your functions your
+4:50
+behaviors and imperative meaning that we just mutate State whenever we feel like it we don't have any special handling of
+4:57
+shared state which can cause problem as your code gets larger and larger and more complex but in procedural and
+5:04
+imperative programming we just cope with the problems as they arise and you can think of this style of programming as
+5:09
+being basically the default it's the the obvious way to get work done so this is really how all programming was done in
+5:16
+the early days of computers but then starting in the 60s as programs got more and more complicated people began
+5:21
+thinking about well how do we solve this problem of shared State because it really can get out of hand and so we got
+5:27
+two major prescriptions on how to handle the problem one of these prescriptions says that our code should be procedural yet functional
+5:34
+meaning that all or most of the functions that make up our code should be pure they should not deal with State
+5:40
+and so programming in this style we would tackle the problem of shared state by minimizing State trying to get rid of as much of it as
+5:47
+possible the other prescription people came up with said that our code should be objectoriented and imperative and the
+5:53
+strategy here is that we simply segregate our state we take the state that makes up our program and instead of
+5:59
+sharing it promiscuously we try and divide and conquer the problem we package it into these encapsulated units
+6:04
+that we call objects and objects contain other objects and so forth and that's how we conquer the problem and these two
+6:11
+prescriptions are actually orthogonal to each other we can do both the functional business to minimize the amount of state
+6:16
+which our program deals with and then whatever state is left over we can then segregate into separate units of
+6:22
+encapsulation and in fact I think this combination approach may actually be the ideal way to structure programs at least
+6:28
+in terms of high code where we don't care so much about efficiency as I'll explain I think segregating state is
+6:34
+actually a valid strategy up to a certain level of detail a certain level of complexity and so if we first
+6:41
+minimize the amount of state which our code deals with it then becomes a viable strategy to segregate the remaining
+6:48
+State you may have noticed in my definition of object-oriented programming that I said nothing about inheritance and that is because
+Inheritance Polymorphism
+6:55
+inheritance is simply irrelevant no one defends it anymore even people who advocate for objector and programming
+7:00
+will very very commonly these days tell you to be very very careful in using inheritance or maybe not to use it at
+7:05
+all and so it's not really pertinent to any argument about whether object-oriented programming is good or
+7:11
+bad for similar reasons I didn't say anything about polymorphism in my definition because polymorphism really
+7:16
+good or bad isn't exclusive to object-oriented programming you can have procedural code that is polymorphic and
+7:22
+in fact even more polymorphic than is typically available in most objector languages so it's really not part of the
+7:28
+discussion as far as I'm concerned when I complain about object-oriented programming I'm really complaining about one idea encapsulation encapsulation
+7:36
+does not work or as I should qualify this encapsulation does not work at A fine grain level which is the core of
+7:42
+what object-oriented ideology prescribes that we need to take the state of our programs and divide and conquer that
+7:47
+problem by chopping it up into tiny little pieces that is the nature of object-oriented code and it doesn't work
+7:53
+it leads to Madness before delving into why object
+The Mystery of ObjectOriented Programming
+7:59
+programming doesn't work it is important to address this mystery of well if object Orient programming isn't so great
+8:05
+why does it now dominate the industry and why has it done so for almost the last 20 years I've heard it sometimes
+8:10
+suggested that well this was an imposition of management management wants interchangeable developers so it
+8:16
+can have a cookie cutter assembly line development process hence business types were really enthusiastic about
+8:22
+object-oriented programming promises about code reusability and compartmentalization it's a theory that
+8:28
+sounds plausible to to me but the main sticking point is that object-oriented programming doesn't actually deliver
+8:33
+these promises you'd think people would have noticed sometime in the last 20 years yet they seem not to have noticed
+8:40
+I'm also skeptical of the idea that management actually really inserts themselves in these technical decisions that often I suppose once say
+8:46
+objectoriented programming was well established and that became the pervasive Norm then yeah sure uh management would push towards doing what
+8:53
+everyone else is doing so that they can draw from the the larger talent pool but otherwise aside from pushing Engineers
+8:59
+to just go along with the Legacy system and not rebuild everything I just don't think that many business managers really
+9:05
+care that much about technical decisions I'm much more inclined to think that object-oriented programming is something
+9:10
+that programmers did to themselves and the question is then well why I think a big part of the answer simply comes down
+9:16
+to Java when it was first introduced in the mid90s Java seemed like a welcome reprieve to many programmers compared to
+9:23
+the Alternatives Java seemed really simple for example on the PC this is what application development looked like
+9:29
+you had to use the win32 API in C and not only did programmers have to concern themselves with memory management as you
+9:34
+do in C but on top of that win32 just doesn't feel like the C that you would learn from books it's not what you would
+9:39
+learn from k&r it's not what you would learn in school it's all this excess macroe heavy stuff on top that is really
+9:46
+mystifying even the tools you would use to write C programs on a Windows platform the the visual studio tools you
+9:51
+know wouldn't be the same as what you would learn in University probably where you probably had a Unix system and that's what you learned so it was
+9:58
+already this platform with a quite High barrier to entry but then also in this period it was undergoing this ugly
+10:03
+transition from win 16 to win32 and so you can begin to see why programmers were desperately looking for some way
+10:09
+out the only real alternative at the time in PC programming was what Visual Basic but that was another effective
+10:15
+Microsoft platform you're locking yourself into and I suppose otherwise you might use Pascal or Deli but that platform had its own issues and so it
+10:22
+shouldn't be too surprising that when sun Microsystems came along and said here's this free thing that uh everyone
+10:27
+can use across all platforms that got people's attention and Java had other things going for it it certainly
+10:34
+seemed more accessible just in terms of like its naming conventions for example you look at the Java apis and you see
+10:40
+things like file input stream which is not cryptic at all and yes there are definitely issues in how abstracted uh
+10:46
+many of the apis are and in you know having to derive base classes to use the apis and all that nonsense but on first
+10:53
+glance on Surface inspection it certainly seems like a friendlier system it's not like Unix where you have stuff
+10:59
+like iocl which is you're supposed to know is input output control and other really horrible abbreviations and then
+11:05
+win32 had the same thing you know lpctstr stands for what is it long pointer to a const tar string so even if
+11:13
+you know what a tar is and a long pointer is you're stuck in this world where everything is cryptically abbreviated and it's just this godamn
+11:20
+puzzle that you have to figure out at every step Java came in and said no we don't necessarily have to program that
+11:25
+way we can write real programs that don't have to be horribly cryptic in that way and then Java took things too far in the
+11:31
+other direction but that's again we'll get to that Java also smartly had the C like
+Java
+11:37
+syntax the curly brace syntax so superficially at least it seemed familiar to programmers from C and C++
+11:42
+and it seemed like real programming it has curly BRAC after all and then the whole compilation to VM bite code
+11:49
+business was again very alluring to programmers trying to escape their platform headaches and then Java also
+11:54
+offered some very basic niceties like proper name spaces without header files for Christ's sake we still have to deal
+11:59
+with header files to do our real programming in CN C++ at least 20 years after we should have ditched them if for
+12:06
+this one thing alone I think it's worth giving Java some credit it mainstreams programming without header files and
+12:13
+then of course also very aluring garbage collection I know some hardcore lowle programmers out there will insist that
+12:18
+garbage collection is never necessary it's never a good idea but whether or not that's the case it's really hard to
+12:24
+argue with the appeal it shouldn't be surprising that the vast armies of people doing business CR applications
+12:30
+wanted to stop thinking about memory management Java also mainstreamed exceptions as the primary way to handle
+12:37
+errors and whatever problems this may have in practice I think it definitely seems appealing because the alternative
+12:42
+is ugly the alternative is what we do in CN C++ of having to have an inbound air
+12:48
+return value or like you know saving to a global and checking the global after every time you do a call it's not pretty
+12:54
+um go L with multiple return in that style probably is the better way to go but that's not the solution Java came up
+13:00
+with and so it normalized this other thing that seemed better at the time I think some people also came to like the
+Convenience
+13:06
+subject verb object nature of method calls over straight function calls because well this is just what we do in
+13:12
+English it's you know subject first then verb then object I myself don't find it all that appealing I prefer consistency
+13:19
+and I think the distinction between subject and object in many many cases gets very very murky which is one of the problems with object ored programming as
+13:25
+we'll get to but the style of syntax in Java led to this convenience people I think since then have become addicted to
+13:31
+which is in their idees it offers them for this data type what are my options what can I do with this thing it seems
+13:38
+to enable a style of programming where you can just sort of browse you don't have to hold all of the options in your
+13:43
+head you just have a vague notion of wait I'm going to take that thing and transform into this other thing I don't remember exactly what the method is
+13:48
+called I'll just grope my way there using autoc completion in my IDE again there's really actually no reason you
+13:54
+couldn't have the same style of convenience in a purely procedural language you would just have an auto comption for given this first argument
+14:01
+what functions take this type as its first argument and it' be effectively the same thing really but because of
+14:08
+quirks of history and syntax design this particular editing convenience has been implemented for languages like Java but
+14:14
+generally not straight procedural languages and I think method autocompletion may actually largely
+14:19
+explain why people sometimes claim that object-oriented apis feel easier to use
+14:24
+it's because you can largely autocomplete your way through most of the usage another thing Java seemed to have going
+14:31
+for it is that back in the mid 90s this was the Heyday of GUI programming and it seemed really logical to map components
+14:39
+as we see them in a guey window and classes in an object-oriented program that seemed like a very natural
+14:46
+correspondence this was the most tangible version of the real world modeling which object-oriented promised
+14:53
+at the time it seemed like a very plausible story and on top of that you have the virtue of java being supposedly
+14:58
+cross platform with the Java Swing API so you can write goys that will run on any system they'll look horribly ugly
+15:04
+but at least hey they run on everything you could do so-called rad rapid application development of guey
+15:10
+applications like you do in Visual Basic except in Java you're not locked into Microsoft's
+15:16
+platform so the funny thing to me about Java is that I think in an alternate history it could have had virtually all
+15:21
+the same success if not even more perhaps if it weren't object-oriented at all it could have just been a straight
+15:27
+procedural language and would have had still a big long list of attractive selling points we could have had all the
+15:32
+same portability the same garbage collection the same exception handling and and so forth down the line without
+15:38
+any of the object orientedness or at the very least without forcing everything into the mold of classes you could have
+15:44
+of a language like python say where there are classes but also just straight procedural code if you want and they can live side by side just
+15:50
+fine so there still is this question Java aside there seems to be some appeal to object-oriented programming in itself
+15:56
+and and what is that well I think very simply if you go back to the' 60s and '70s as people were grappling with the
+16:02
+problems of software systems getting larger and larger people tried to identify units of code abstraction that
+16:08
+were larger than individual functions and data types it's natural to want to describe any complex system in terms of
+16:14
+large scale components you know if you talk about human anatomy you don't explain it first in terms of microbiology that would be nuts we first
+16:21
+talk about very major organs like the brain and the heart and kidneys and and so forth as software gets larger and
+16:27
+larger it felt like like these units of code we were building out of the base materials these data structures and
+16:32
+functions they became smaller and smaller relative to the whole sadly though the one General
+16:38
+answer people could come up with of what is a unit of code abstraction bigger than a function and bigger than a data
+16:43
+type is just simply a combination of the two and hence objects were born we took our functions and our data types and we
+16:50
+Associated them together into these larger units we want to think in terms of paragraphs rather than individual
+16:55
+sentences and object-oriented programming seem to have an answer for how we could do that it's also very natural that as we
+17:02
+build larger and larger systems and complex things as much as possible we want simple rot rules to guide us
+17:08
+objectoriented programming seemed to present a unit of abstraction and a set of guidelines whereby we could can
+17:14
+incrementally accrete larger and larger systems this line of thinking is what led us to patterns and then the
+17:20
+so-called solid principles and dependency injection and test driven development and all this stuff which has
+17:25
+subsequently been piled on by many people who insist that this is now the one true way to do object-oriented
+17:30
+programming but to me all these best practices represent Band-Aids they are
+17:35
+compensation for the fact that the original vision of object-oriented programming has never panned out and every few years there's a new ideology
+17:42
+in town about how we actually do objectoriented programming for reals this time it's very easy to miss this
+17:48
+Dynamic I know I did for several years because I think within all of these addendums to object programming there's
+17:54
+lots of mystical speech dancing around genuine insights but it's not quite
+17:59
+cohesive objectoriented programming feels like this circle which we've been trying to square for over a generation
+18:07
+now finally let's talk about what's really wrong with object-oriented programming specifically encapsulation
+Encapsulation
+18:13
+which is the Lynch pin of the whole thing so consider what is an object an object is this bundle of encapsulated
+18:20
+state and we don't interact with the state of that object directly all interactions with that state from the outside world come in through messages
+18:26
+messages to the object the object has a set of messages which it will receive called its public interface and so we
+18:32
+have private information hidden behind a public interface when an object receives a message it may in turn send messages
+18:38
+to other objects and so we can conceive of an object-oriented programming being this graph of objects all communicating
+18:44
+with each other by sending messages many people today forget though that the original conception of a
+18:50
+message is not exactly synonymous with just a method call yes in practice it means calling methods but a message
+18:56
+strictly speaking sends only copies of states it doesn't send references a message sends and returns information
+19:02
+about State not State itself and well wait a minute objects themselves are
+19:07
+State and this has some interesting consequences it means that strictly speaking messages cannot pass around
+19:13
+object references I've never seen a Java or C codebase that ever follows this rule perhaps some small talk programs
+19:20
+have but in general this rule is not observed at all and probably for good reason as we'll discuss but anyway if we
+19:27
+take the rule seriously it means then for an object to send a message to another object the first object must
+19:32
+hold a private reference to that other object because otherwise how is it going to talk to it to talk to an object you have to have a reference to it and where
+19:38
+is an object going to get a reference to another object if it can't get object references from messages the references
+19:44
+which an object needs have to all be there at the object's Inception they have to be there for the whole lifetime of the object and there's an even deeper
+19:52
+consequence which is that if an object is sending messages to another that other object is part of the first
+19:57
+object's private State and by the principle of encapsulation an object should be responsible for all the
+20:03
+objects which it sends messages to this should be obvious if you consider that messages indirectly read and modify
+20:09
+State when B sends a message to a here it's messing with the state of a indirectly sure but it's still messing
+20:15
+with its state and so what happens when other objects come along and send messages to that same object What's
+20:20
+Happening Here we have shared State it's hardly any different than if you had a single Global variable being shared by
+20:26
+say 10 functions if you have an object receiving messages from 10 other objects those objects are all effectively tied
+20:31
+together because they're implicitly Shar this state sure the interactions with that state are indirect through public
+20:37
+methods but those methods are providing very trivial kinds of coordination of the state you can impose rules through
+20:42
+the accessor methods like saying oh if you access this field it's a number well you can only increment that number you can't mutate it in any other way fine
+20:49
+but it's a very trivial kind of protection the hard problems of shared state are much much deeper where in the
+20:55
+system of 10 objects all sharing the state is the real Cor coordination and the answer is there isn't any as soon as
+21:01
+you have objects being shared encapsulation just flies out the window so if we're taking encapsulation
+21:08
+seriously the only real way to structure a program to structure our objects as a graph is not as a free form graph but as
+21:14
+a strict hierarchy at the top of our hierarchy we have an object representing effectively the whole program it's our
+21:20
+God object and that has its direct children which represent the subcomponents and those children in turn
+21:25
+have their own subcomponents and so on Down the Line and each object in the hierarchy is
+21:30
+responsible for its direct children and the messages being passed strictly only ever go from parent to their direct
+21:37
+child the god object here for example is not supposed to reach down to its grandchild it has to do all of its interactions with this grandchild
+21:43
+indirectly through the grandchild's parent otherwise who really is responsible for that object who's managing its state it's supposed to be
+21:50
+the direct parent and so what happens when we have some sort of crosscutting concern like
+21:55
+down in the hierarchy it turns out oh wait there's some business that that object has with another object in a totally different branch of the
+22:01
+hierarchy how do they talk to each other well not directly everything has to go through their common ancestor for a to
+22:08
+send a message to be here it can't actually directly invoke any kind of method it has to mutate its own state in
+22:14
+some way and then information about that state that new intention of the object gets returned from a message sent from
+22:20
+A's parent A's parent in turn same thing has to happen so it gets back up to the common ancestor and then only finally
+22:26
+when we get to the common ancestor can that intent be realized as a series of message calls but not directly down to B
+22:32
+it has to be bucket brigad down through the hierarchy that is how you handle cross-cutting concerns in a strict
+22:39
+encapsulated hierarchy obviously no one writes programs this way or at least no one
+22:45
+writes whole programs this way and for good reason it's an absurd way to have to write your code now you might argue that people do
+22:52
+follow these principles in practice they just do so inconsistently and perhaps there is some value in a code base where
+22:58
+you apply these principles inconsistently perhaps half fast encapsulation actually gets us something
+23:04
+so imagine we have some sort of free form graph of objects making up a program and we decide oh well there's a
+23:09
+subsystem of objects that together should be their own self-contained encapsulated hierarchy of objects and so
+23:14
+we're going to refactor our code well very often what that means is not only do we have to do a lot of complicated
+23:20
+rethinking of the structure of the relationships here of what calls what on the other objects we very typically have
+23:26
+to introduce more objects like say here to present this whole new subsystem we probably have to introduce some new subot object you know some ruler of this
+23:34
+subsystem now all interactions with the subsystem have to be reconceptualized as going through this minor
+23:40
+deity so say we successfully do this refractor and now while our code doesn't follow the principles of encapsulation
+23:46
+perfectly it's doing so in a half consistent way and maybe there's some benefit there well I think what tends to
+23:52
+happen is subsequently we decide oh wait we need some new interaction between elements of this encapsulated subsystem
+24:00
+and instead of having to do the hard work of figuring out how exactly it all gets coordinated from the root of that
+24:06
+subsystem the Temptation is to just handle the business directly but if we want to do the proper thing we have two
+24:12
+options maybe it turns out that that stuff external to the subsystem actually just needs to get integrated into that subsystem and so it comes under the
+24:19
+purview of the subsystems rout but otherwise we now have two subsystems that need to coordinate and who's going
+24:24
+to do the coordination well now we need a new subsystem God object responsible for the collective business of these two
+24:31
+subsystems and now all interactions of these two subsystems have to go through this root object but also all
+24:36
+interactions with the outside world and these two subsystems have to go through this new root object so as you can see
+24:43
+chances are really good that what you would actually do is say it and just do this you would just reach in and have the objects directly interact with
+24:49
+each other whether they should properly do so or not and now where's the encapsulation what's the point whether
+24:55
+you follow the rules strictly or Loosely you're in a bad place if you follow the rule strictly most things you do end up
+25:02
+being very un obviously structured and very indirect and the number of defined entities in your codebase proliferates
+25:08
+with no end in sight the nature of these entities tends to be very abstract and nebulous but alternatively if you follow
+25:14
+the rules Loosely what are you even getting why are you bothering what is the point when I look at your
+25:19
+object-oriented code base what I'm going to encounter is either this over-engineered giant Tower of abstractions or I'm going to be looking
+25:26
+at this inconsistently architected pile of objects that are all probably Tangled together like Christmas lights you'll
+25:32
+have all these objects giving you a warm fuzzy feeling of encapsulation but you're not going to have any real encapsulation of any
+Barriers
+25:40
+significance what people tend to create when they design object-oriented programs are overly architected
+25:45
+buildings where the walls have been prematurely erected before we have really figured out what the needs of the floor plan are and so what happens is
+25:52
+down the line turns out 08 we need to get from this room over here to that room over there but 08 we've erected barriers in between so we end up busting
+25:59
+a bunch of holes through all the walls like the Kool-Aid guy and the resulting pattern is really not organized at all it's just swiss cheese we thought we
+26:06
+were being disciplined neatly modularizing all the state but then the requirements changed or we just didn't anticipate certain details of the
+26:12
+implementation and we end up with a mess the lesson we should take from this is to be very careful about erecting
+26:18
+barriers about imposing structure it's actually better to start out with a free form absence of structure rather than
+26:23
+impose a structure that will likely turn out to not really fit our problem bad structure that doesn't really fit our
+26:28
+problem not only makes it harder to implement the code in the first place it hinders change and it confuses anyone who looks at our code because it's
+26:35
+implying one thing but then what's really going on is another in the object-oriented world we have to think
+26:40
+about all these graphs we have to think about an inheritance hierarchy we have to think about a composition graph we
+26:45
+have to think about data flows between the object and also we're thinking about a call graph the liberating thing about
+26:50
+procedural code is there's just the call graph we also of course do have to think about how our data is structured and how
+26:56
+our data gets transformed throughout the course course of the program but the beauty of procedural code is that we can think about that totally independent of
+27:03
+any notion of responsibilities when I'm looking at my data I can think just about my data and when I'm looking at my
+27:08
+functions I'm not thinking about all these self-imposed barriers I'm not constantly trying to group and
+27:14
+modularize everything into these small units of so-called single responsibilities when I sit down to
+27:20
+write object-oriented code I always have to play this game I have this mental list of the obvious data types which my
+27:25
+code will deal with and I have the separate mental list of all the imagined behaviors I want in my program all the
+27:31
+the functionality I imagine it to have and then what object-oriented ideology demands is that I take all my behaviors
+27:37
+and I somehow associate each one with one of my data types inevitably what this means in any non-trivial program is
+27:43
+I'm actually going to have to introduce all sorts of additional data types just to be these containers for certain
+27:49
+behaviors which otherwise don't Naturally Fit with any of my obvious data types the data types I knew I
+27:54
+actually wanted because they represent actual data I need in fact as programs get larger and larger in objectoriented
+27:59
+code it tends to be that these unobvious unnatural data types tend to actually predominate you end up with majority of
+28:06
+so-called data types which really aren't there because they're representing data they exist simply as attacks to conform
+28:11
+to this ideology about code modularization very quickly we end up in what Steve Yi called the kingdom of
+28:17
+nouns where every aspect of our program has to be reconceptualized as not just mere Standalone verbs you know functions
+28:23
+they have to be reconceptualized as nouns things that represent a set of behaviors and so what we get in our
+28:30
+objectoriented code bases are all these service classes and manager classes and other what I call doer classes these
+28:36
+very nebulous and Abstract entities even when dealing with data types and behaviors that are relatively
+28:42
+concrete which have fairly visible connections to the functionality apparent to actual uses of the program
+28:48
+even here the matchmaking game constantly presents us with these obnoxious philosophical dilemmas in
+28:54
+object-oriented analysis and design we constantly have to ask ourselves stupid questions like should a message send
+28:59
+itself because maybe instead we should have some sender object which sends messages or wait a minute maybe there
+29:06
+should be a receiver object which receives messages or a connection object which transmits messages so very quickly
+29:13
+the real world modeling which object-oriented programming promises becomes a Fool's game where there aren't
+29:18
+any real good answers in my experience objectoriented analysis and design very quickly becomes
+Analysis Paralysis
+29:24
+analysis paralysis if you take the ideology seriously as I did you're going to waste a lot of time Heming and
+29:31
+Hauling about to conceptualize these elements of your program object-oriented programming is generally sold to
+29:36
+students on the basis of these trivial examples that neatly model real world taxonomy but what we get in practice
+29:43
+from object-oriented analysis and design is a lot of very abstract excess structure with no obvious real world
+29:50
+analoges note here that programmers have their own peculiar definition of abstract when programmers talk about
+29:56
+abstraction they're generally talking about about simplified interface over complex inner workings what's odd about
+30:02
+this is that in more General usage abstract has a connotation of being hard to understand something which is
+30:08
+abstract has no resemblance to the things of common daily life and it turns out that most things which programs do
+30:14
+are abstract in this sense and so it shouldn't be surprising that we have great difficulty conceptualizing the
+30:20
+components of a typical program in terms of neatly self-contained modules particularly modules which have any real
+30:26
+world analog when we pollute our code with generic entities like managers and factories and services we're not really
+30:33
+making anything easier to understand we're just putting a happy face on the underlying abstract business and for
+30:38
+every excess layer of abstraction we're getting more abstractness in attempting to neatly
+30:44
+modularize and label every little fiddly bit that our program does we're actually just making our program harder to
+30:50
+understand something that happens all the time when I look at object-oriented code bases is that I'll try and find the
+30:56
+parts in code that Cor respond to some user visible functionality but trying to find the functionality going by Clues
+31:03
+from the names of classes and the names of methods tends to be very misleading very typically my expectation that
+31:09
+functionality X would be in the class named X turns out to be wrong because the abstract nature of what we typically
+31:15
+do in programs generally necessitates that functionality is not going to be self-contained it's not going to neatly fit into one neat module and so the
+31:23
+class which is called X will very superficially relate to X but then all the real work is done elsewhere
+31:28
+scattered throughout the code this makes me question what is the value of having a class called X if it doesn't really
+31:34
+contain all the business of X what this class X really represents is actually misleading code structure and how is
+31:40
+that helpful how is that conducive to understanding of your code base the other reason I have this
+31:45
+problem reading code bases and trying to track down where functionality actually lives is because object oriented design
+31:51
+tends to fracture functionality in our code it tends to take what otherwise could be relatively self-contained Cod
+31:57
+code and split it up into many separate methods across many separate classes typically often in many separate files
+32:03
+for God's sake this fracturing is accepted because of an ideology about encapsulation and this notion of classes
+32:11
+and methods properly having so-called single responsibilities and there are certainly valid Arguments for that idea
+32:17
+certainly it is much easier to get a small short function correct than to get a large sprawling function correct but
+32:24
+the important question is that in splitting a code up into many little small methods and to many separate classes are we actually decreasing the
+32:30
+total complexity of our program or just displacing the complexity just merely spreading it around in either case
+32:37
+there's this attendant trade-off we're making where by splitting up larger units of code into many smaller ones
+32:42
+we're greatly increasing the the so-called surface area of our code where I come along and I look at your code
+32:47
+base and I try and get a foothold and everything split up into these tiny little units these tiny little packets of code reading this kind of code often
+32:55
+feels frustrating in the same way it can be frustrating to eat a bunch of little candies that are all individually wrapped and when all your methods are
+33:01
+really really short you end up having to jump all around the code to find any line of logic a lot of business that
+33:06
+otherwise could be neatly sequentially expressed in longer methods gets artificially split up so it feels like
+33:12
+you've taken a neatly sorted deck of cards and throwing them into the air so you can play 52 card
+Procedural Code
+33:19
+pickup okay so if you're not going to be writing objectoriented code what are you going to be doing instead you're going to be writing procedural code but what
+33:26
+does that look like well as I mentioned at the beginning this doesn't necessarily mean you need to avoid classes entirely if you have a language
+33:32
+like python or C++ where you have both straight functions and also classes there are some cases where the
+33:38
+association between your data types and certain functions is really really strong that it fits some organizational
+33:44
+purposes to just explicitly associate them together by making those functions methods of that type the most obvious
+33:50
+example would be adts abstract data types things like cues and and lists and so forth the key thing to keep in mind
+33:57
+however is that the moment you start Heming and Hauling about whether this particular function really has a primary association with that data type that
+34:03
+should be the moment you say screw it will make it just a plain function because it turns out that most things we do in code tend to be crosscutting
+34:10
+concerns they don't have necessarily special obvious relationships with particular data types they might concern
+34:16
+more than one data type and that's why you should generally prefer functions so you don't have to play this silly game of matchmaking functions to data
+34:23
+types so we're going to be writing our code primarily out of plain functions and we're not going to attempt to
+34:29
+encapsulate the state of our program at A fine grain level because it doesn't work however shared state is still a
+34:35
+problem and if we're not careful it can get out of hand we can't totally solve the problem unless we do pure functional
+34:41
+programming but short of that there are broad guidelines we can follow to mitigate the problem first off whenn and
+34:47
+doubt parameterize this means that rather than passing data to functions through Global variables you should
+34:52
+instead make that data an explicit parameter of the function so it has to get explicitly passed in
+34:58
+as much as possible we want data access in our program to flow through the call graph so anytime you're tempted to pass
+35:04
+data to a function through a global because it seems more efficient or maybe just more convenient you should give that a strong
+35:11
+reconsideration secondly whatever globals you do end up within your program it could be slightly helpful to group them logically into data types
+35:17
+even if this means you effectively have a data type with one instance in your whole program this little trick can often make your code seem just a little
+35:23
+bit more organized in a sense you're just using data types this way to create tiny little subname spaces but if you do
+35:29
+a good job logically grouping your globals this way as a side benefit this can complement rule number one because now you can more conveniently pass this
+35:35
+Global state to functions by bundling your data together into types you typically cut down on the number of
+35:41
+parameters which functions have to take though do be careful there is an art to how you logically group things
+35:48
+together the third guideline is to opportunistically favor pure functions even if you're not explicitly working in
+35:53
+a functional style or working in a functional language if you see an opportunity to make a function pure it's
+35:59
+generally good strategy to take that opportunity again pure functions tend to come in at efficiency cost but the
+36:04
+brilliant thing about pure functions is that they're the only truly self-contained unit of code when I'm reading and writing a pure function I
+36:11
+don't have to think about anything else I can just consider that function entirely unto itself therefore they tend
+36:16
+to be easier to understand and to make correct the fourth guideline is that we
+36:22
+actually should try to encapsulate our code only in a very loose General sense at the level of namespace is packages
+36:28
+modules whatever your language has so when I'm working in goang for example I think of each package as having its own
+36:34
+private State and then a public interface I find that encapsulation at this course grain level tends to work
+36:40
+because you're typically dealing with much larger units of code than the supposedly ideal classes of object-oriented programming the typical
+36:47
+goang program is going to have not that many packages maybe like 10 at the high end and structuring a mere handful of
+36:52
+elements into hierarchy of encapsulation is reasonably doable when it turns out during development that oh wait I have
+36:58
+some cross cutting concern of my packages and so we're going need to violate this perfect hierarchy of encapsulation again it's not such a big
+37:05
+deal because you're dealing with a relatively small graph of objects all the basic problems of encapsulation are
+37:10
+still there it's just at the corar grained macro level the problems are reasonably
+37:15
+manageable the last guideline is that you shouldn't be scared of long functions for a long time now
+37:20
+programming students have been advised to when and doubt chop their code into smaller and smaller functions but doing
+37:26
+this has significant costs that are tradeoffs it turns out that most programs have these key sections where
+37:31
+most of what the code is doing is a long laundry list of stuff and what we're told to do in these scenarios is write
+Functions
+37:37
+functions like this where all the business has been extracted out to separate functions the problem with
+37:42
+doing this pervasively is that what was naturally a logical sequence of code and was otherwise written in sequence top to
+37:49
+bottom is now spread and out of order throughout your code base obviously in cases where the business extracted to a
+37:55
+separate function is something that you want to call in multiple places that's a very good reason to have a function but
+38:01
+if all these functions were just called in this one place I would generally prefer looking at code where the business of those functions is just done
+38:07
+in line and if we want high level documentation of what's going on in my funk here then you just put what I would
+38:14
+call a section comment denoting what each section of the code does in this Arrangement the sequence of the business
+38:20
+is totally clear and when I'm browsing the whole codebase when I'm looking outside this function there's less clutter because there are now fewer
+38:26
+functions I have to look at and Wonder well hey where is that called I wonder what that thing does it also has the
+38:31
+advantage of letting us avoid having to name functions naming stuff is really important in code but it's really really
+38:36
+hard to do well and in general I find it preferable if we can avoid naming entities as much as possible in this
+38:42
+arrangement we don't have to think hard about what to call these functions we can just have a comment line and have a full English sentence which generally is
+38:48
+better at conveying accurate meaning and also is simply easier to write if for whatever reason it doesn't
+38:54
+seem adequate to Simply comment a section rather than extract it to to a separate function the next best thing is
+38:59
+to make it a private function a nested function such that it's clear this function is not called anywhere else
+39:05
+it's only called within this function in this arrangement I as a reader of your code coming from the outside I'm still
+39:11
+presented with a smaller surface area fewer entities in the code and so it's just easier for me to get a
+39:16
+foothold now when you do write functions which are hundreds if not thousands of lines long you still should keep in mind
+39:21
+General guidelines about code readability basic things like not strain too far from the left margin for too far or for too long you know you don't want
+39:27
+to have code that's indented in eight levels because it gets really obnoxious scrolling up and down code if you have to scroll over for one thing and also it
+39:34
+tends to just imply there's a lot of busy logic in this part of code and it gets confusing so likewise you also need
+39:40
+to look out for parts of functions where the logic's just getting too complex the first thing to do is of course to try
+39:45
+and simplify your logic but failing that there are going to be cases where hey we should just split this off into a separate function so it's more neatly
+39:51
+self-contained complexity the other concern with longer functions is that as your function gets
+39:57
+longer and longer you tend to ACR more and more local variables so what you want to do is hopefully your language
+40:02
+allows this you want to try and constrain the scope of the local variables so that they don't exist for the full duration of the function but
+40:08
+rather for subsections this way either read of your code when I scan up and down the function I don't have to think
+40:14
+about all the variables for the whole duration of the function the way this is done in most curly brace languages is
+40:19
+you can just introduce a new Subs scope with curly braces so here for example this integer X variable only exists
+40:24
+Within These curly braces when you have subset sections of a function which you are commenting it's generally a good
+40:30
+idea to whenn in doubt enclose them in curly braces this gives readers of the function an assurance that variables
+40:35
+from the preceding sections don't fall through to the following sections and so in later sections we don't have to think
+40:41
+about the variables that were used above where possible the even better
+40:46
+thing to do is to enclose these local Scopes in their own Anonymous function that's then just immediately cold and
+40:52
+the advantage here within the nested function is that it's not just its own Subs scope but also within this Anonymous function it's guaranteed that
+40:59
+any return is not going to return out of the enclosing function it'll return just out of this enclosed function and so we
+41:05
+have a stronger guarantee that the logic of the subsection is self-contained from the enclosing
+41:10
+function unfortunately what I often really want when creating subsections of longer functions is a feature that
+41:15
+doesn't exist in any language I know of it's an idea I've only seen in one other place it was Jonathan Blow and his talks
+41:21
+about his programming language that he's making and the idea is that we want something like an anonymous function
+41:26
+which doesn't see anything of its enclosing scope the virtue of extracting a section of code out to a truly
+41:32
+separate function is that everything that comes into the function has to be explicitly passed to a parameter it
+41:38
+would be great if we could write inline Anonymous functions with the same virtue specifically what I would propose is
+41:44
+imagine we had a reserved word use that introduces a block and in the header of the use we list variables from the
+41:51
+enclosing scope which we want to be accessible in this block but otherwise anything from the enclosing scope would
+41:56
+not be visible visible these listed variables however would really actually be copies of those variables so if you
+42:02
+assigned X or Y here in the scope you're assigning to X and Y the local variables of this used block not to X and Y of the
+42:09
+enclosing scope which is the effect you get with a truly separate function right you assigned to the parameters of a
+42:14
+function you're not modifying what was passed to the function you're just modifying those local variables that's the same thing we want in this use block
+42:21
+furthermore a Ed block should itself return values so you use return inside the use block and it doesn't return from
+42:27
+the enclosing function it returns from the use itself the use is an expression and so we can return values from this
+42:32
+use and assign them to this variable a so in effect we'd have this block of code which is as neatly self-contained
+42:38
+as a separate function however it is written in line and so it's very very clear that oh this is a piece of code
+42:44
+that's only used in this one place you don't have to go look for it elsewhere and also we don't even have to give it a
+42:50
+name instead we can just put a section comment header before the used block and that is generally much better for
+42:55
+containing the actual intent of this block code if later down the line we decide that this block of code actually
+43:01
+should be extracted to its own proper function that's a very easy thing to do you could have an editor convenience that does that for you automatically
+43:07
+it's already clear what the parameters and the arguments should be all the programmer would have to do is provide a name for the new
+43:14
+function so anyway it'd be nice if language has had this feature unfortunately I don't know of anyone that does but regardless you shouldn't
+43:20
+be so scared of long functions they actually have their place in most code bases
+43:29
+at the very least I hope I can get you to try procedural programming it doesn't really matter what language you're in if
+43:35
+you're in Java or C you can write procedural code you can break the rules but if you've ever felt any of the
+43:40
+paralysis that I felt attempting to do objectoriented programming properly to square the circle I think you'll find
+43:46
+abandoning all those ideas and just reverting to procedural code to be a liberating experience I can tell you
+43:52
+from personal experience of having read these books that you don't need to read them they don't have answers they're not going to score the circle and you're
+43:58
+going to waste productive years of your life trying to live up to their ideals I'm not saying there's nothing to these
+44:03
+ideas there are bits and pieces that have value test driven development for example has some interesting ideas there's value in testing but that's part
+44:10
+of the problem is that kernels of good ideas have been taken to holistic Extremes in a way that I think has been
+44:15
+disastrous for the industry and certainly for programming education there are very few solid holistic
+44:20
+answers about how we should write code we'd all be better off if we stopped chasing that Chima
+
