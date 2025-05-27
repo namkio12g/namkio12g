@@ -1,948 +1,853 @@
 0:00
-i do think it's kind of bad when I start off ready to disagree with an article before it even starts but I'm willing to
-0:07
-be wrong we're going to go in there with an open mind i just simply feel like I don't agree with this at all i do really
+you know I've been thinking about
+0:01
+getting into Vim for a bit it seems like
+0:03
+the Neovim community is really strong
+0:04
+and it could speed up my experience
+0:06
+writing and editing code but I have a
+0:08
+couple things I wish that it did that it
+0:10
+doesn't i wish it was written in Rust i
+0:13
+wish that a big company was backing it
 0:14
-like how he frames it though senior devs aren't faster they're just dodging problems you're forced to solve i I
-0:19
-actually like I love that name of that cuz I really hope that this is actually a part of I hope we get a lot of the
-0:24
-same stuff here all right experts have it easy something that's painfully underststudied is how experts are more
+so that we would know it would be there
+0:16
+forever and I wish it looked a lot more
+0:18
+like the OG MS DOS days if you're like
+0:20
+me you're in luck because Microsoft just
+0:23
+announced edit i can't believe this is a
+0:26
+real thing but it also legitimately does
+0:28
+seem kind of cool and I want to go
 0:29
-efficient than noviceses while achieving better results i say underststudied and not unstudied because it's common
-0:35
-knowledge that charging people for their time results in experts being paid less since they work faster which is why
+through it with you guys and no I was
+0:30
+not trolling okay I was trolling about
+0:32
+really wanting this but this is a real
+0:34
+project by Microsoft microsoft/edit on
+0:36
+GitHub it is really written in Rust has
+0:39
+a bunch of contributors it's a simple
 0:41
-experts charge more for their time this effect is underststudied in uh in the impact it has on noviceses entering the
-0:47
-field a novice will start out being wolffully inefficient putting in incredible amounts of effort and running through all number of mental hoops in
-0:54
-order to maintain the growing pile of unmaintainable abstractions they've developed okay yeah that's actually
-1:00
-that's actually a really great thing though right i mean who I once built a
-1:05
-game yes it was kind of like one of those shooting flying airplane games when I was much younger with X and A i
-1:11
-had something like seven to 10 levels of inheritance for every object you know what I learned stop doing that right
+editor for simple needs in the style of
+0:44
+MS DOS apparently it can only be
+0:46
+installed on Windows right now
+0:48
+supposedly but there are other ways to
+0:50
+get this running from the virtual
+0:52
+machine that I just paid a big license
+0:53
+fee for to a Rust build that's floating
+0:56
+around for Mac and a couple other
+0:57
+platforms but I just paid a license fee
+0:59
+for that Windows VM and obviously
+1:01
+Microsoft's not going to cover the cost
+1:02
+so uh quick word from today's sponsor
+1:04
+then we dive in today's sponsor is here
+1:06
+to help with everyone's favorite topic
+1:08
+code review okay okay wait don't don't
+1:10
+skip yet i promise this one's worth it
+1:12
+because Code Rabbit just put out
+1:13
+something really cool their VS Code
+1:15
+extension is incredible and yes it works
+1:17
+in cursor as well how many times have
 1:19
-like it was great for me it was great like if I wouldn't have done that
-1:25
-honestly if I wouldn't have made such a shitty architecture I would have literally never learned why inheritance
-1:31
-sucks or at least that level of inheritance sucks like that's the thing is that people forget that failing
-1:38
-miserably is in fact a huge benefit i lost all of my money in doing a startup
+you made a bunch of changes to some code
+1:21
+and just kind of lost track of what you
+1:23
+were doing and wanted to make sure
+1:24
+everything was working as expected or
+1:26
+better you don't want to put up the PR
+1:28
+just yet you wanted to know how it was
+1:30
+ahead of time i'll be honest I've been
+1:32
+using Code Rabbit for this already by
+1:34
+just pushing up the PR telling my team
+1:36
+to not look at it yet and just waiting
+1:37
+for them to review well they fixed it
+1:39
+and now I can just click this review all
+1:41
+changes button in the plug-in in VS Code
 1:43
-i wasted two years of my time in an utterly failed startup i started it
-1:49
-steered the ship straight into the ground absolutely was the worst but you know what i still look back on that time
+and it will go review that live here
+1:46
+this is actually my first time trying it
+1:47
+i wanted to film it because I'm so
+1:48
+excited to see how this does i made a
+1:50
+really simple change where I updated an
+1:51
+effect to not run aggressively because
+1:53
+it was for doing a migration that we
 1:54
-as being one of the single most valuable times of my life and I almost like I
+didn't want to run more than once and
+1:56
+let's see what it has to say and look at
+1:57
+that it caught some things that we
+1:58
+should probably change i don't even need
+2:00
+to have their tab open i can just click
 2:01
-pretty much direct all of my success to that one thing an expert doesn't have to
-2:07
-jump through these hoops well no no not true an expert jumped through these
+the little comment icon and it will show
+2:03
+me what it recommends and when it
+2:04
+recommends making the change here we're
+2:06
+actually setting the wrong thing i
+2:08
+should be using the constant that I
+2:09
+defined earlier good comment let's just
+2:12
+delete that because it shouldn't have
 2:13
-hoops remember that it's inappropriate to say that an expert doesn't jump through these hoops experts jumped through these hoops and some of them
-2:19
-jumped through the hoops for a decade some of them only jumped through the hoops for a couple years because they understood like you you start to
+been there here suggests we don't update
+2:15
+the migration flag until the migration
+2:16
+is run that's probably the right call
+2:18
+but rules of hooks are annoying and the
+2:20
+fact this effect can run twice is
+2:21
+something we need to be considerate of
+2:22
+this is a thing I should think about
+2:23
+though and I might not have thought
 2:25
-understand these things they they you know you make the hoops you jump through the hoops they can more clearly see the
+about this i might have just innocently
+2:26
+left this in and now I can at the very
+2:28
+least leave a comment saying why I did
 2:30
-actual problem at hand and more efficiently put their time and effort towards making progress against the problem in contrast novices will spend
-2:37
-more time battling problems they've created for themselves let's explore the idea by looking at two characters
+this thing that's great this is
+2:31
+intentionally really small change but
+2:33
+you could imagine how when you're
+2:34
+aentically coding giant things using
+2:36
+cursor or wind surf or whatever else how
+2:39
+useful it would be to have an assistant
+2:40
+just look over it once more before you
 2:42
-entrapped in the maze and how they go about escaping deal by the way I know the writers out here careful in the
+push it up i know I'll be using this a
+2:44
+lot and I hope you guys do too thank you
+2:46
+Code Rabbit for sponsoring today's video
 2:47
-YouTube transition you know lines that's like an old YouTube transitions okay now let's do this you know I think modern
-2:53
-things is is changed a little bit in how people do speaking all right stuck in the maze expert versus novice imagine a
-2:59
-world-class navigator being set in a maze they will come they come well prepared with a compass and paper and
+check them out today
+2:49
+it's/codrabbit i could try compiling it
+2:51
+that would be fun let's do that paste
+2:55
+error does not support it does not exist
+2:58
+can't build a standard library see what
+3:00
+happens if I just add this component my
+3:03
+first time taking a real like Rust
 3:05
-have previously escaped some of the most dastardly mazes designed by man also imagine yourself you're a novice in this
-3:11
-scenario you didn't realize you were being thrown into a maze you didn't even know if the goal is to get out or find the center as you go deeper and deeper
-3:17
-into the maze you realize that you're hopelessly lost well if you would have followed the right-hand wall rule you wouldn't be lost dummy okay uh through
+project from a different ecosystem and
+3:07
+building it on a Mac see how how magical
+3:09
+the multiplat experience is where does
+3:12
+it output ah it's this one cool chmod
+3:19
+777/edit aha look at that even a dumbass
+3:22
+like me can compile this you can create
 3:24
-the miracle of literary convenience your expert friend calls you up and offers you advice as soon as you start keep
-3:30
-track of where you've been using a ball of twine it'll help you keep track of the decisions you make you didn't realize the criticality of feline play
-3:36
-things and so you didn't bring a ball of twine I think is that a reference to Git is that a reference to making sure your
-3:42
-code is at least in a suppository of some sort you also don't remember where you started you ask your expert friend
+new files open them open and close the
+3:27
+editor you have all the hot keys you
+3:29
+need control S for save not command S
+3:32
+don't don't be a Mac person this is a
+3:34
+Windows product remember so you got to
+3:35
+reach over slightly if you're a Mac user
+3:37
+hit that control S control O for open
+3:40
+option E for edit in order to get into
+3:43
+this menu you have all of the hotkeys
+3:45
+you need as a Vim guy undo redo cut copy
 3:48
-for advice on what to do and they respond "Oh I've got no idea i never go
-3:53
-anywhere without my ball of twine you just shouldn't have got yourself into this mess in the first place." Friends
-3:59
-see this is why nobody has friends in the modern world anymore okay this is what happened your friends when you
+and paste you can jump around the way
+3:50
+you would expect page up page down what
+3:52
+else would you need and as you see you
+3:54
+have all the syntax highlighting you
+3:56
+need none it's a markdown file you don't
+3:58
+need highlighting come on it's not that
+4:00
+useful besides you don't even get any of
+4:01
+them without installing a plugin
+4:03
+basically the same thing you just can't
 4:05
-needed help talked about how they already had all their stuff prepared and that you're the idiot and now you don't
-4:10
-have any friends okay classic that's that some of the trickiest tangles I've tackled haven't been because the core
-4:16
-problem is difficult but rather because I was helping someone with less experience and they spent several hours getting themselves more and more tied up
+install plugins because who needs those
+4:07
+there's a lot here that's interesting at
+4:09
+least they do have word rap important i
+4:12
+actually do keep word rap on in my
+4:14
+editor people think I'm insane but I'm
+4:15
+also a Tailwind user so I'm kind of
+4:17
+insane one of the lead devs from the
+4:19
+project actually commented on it on HN
+4:21
+and had a lot of good insights I wanted
 4:22
-before asking for help and they've made the wrong decision which maybe solved their short-term problems but shot them
-4:27
-in the foot in the long term this bad decision made others bad decisions more likely until they were helplessly stuck
-4:33
-in the trap of their own making again I think this is a good thing though right
-4:39
-at least for me me personally I do not learn i'm not a wise man right there's
-4:45
-this whole idea that the Oh hey you're welcome for the phone notification but there's this idea that wisdom there's
-4:51
-two types of people that earn wisdom well there's technically three types of people the first type of person earns
-4:57
-wisdom by seeing someone else's failure and is able to go "Oh I shouldn't do this because I can see that other people
-5:02
-have failed due to this." There's another set of people that when they read about stuff or they or they even
-5:10
-just observe it in text or I mean this is the same sorry that was the first person the first person is like they read in text or they see other people
+to share they built their own custom
+4:24
+terminal UI library and they did that
+4:26
+because they wanted to write a plug-in
+4:28
+model around a C AI i have no idea what
+4:31
+that even stands for it was application
+4:32
+binary interface makes sense existing
+4:35
+terminal UI frameworks that they found
+4:36
+that were popular usually didn't map
+4:38
+well to plain C and of the ones they did
+4:40
+find they were just too large remember
+4:42
+they have to keep this binary really
+4:43
+small because it's being bundled in
+4:44
+Windows the arena allocator exists
+4:46
+primarily because building trees in Rust
+4:48
+is quite annoying otherwise it doesn't
+4:50
+use bump i don't know any of these
+4:52
+things rust people have fun in the
+4:54
+comments regarding the choice of Rust I
+4:56
+actually wrote the prototype in C C++
+4:59
+Zigg and Rust they wrote it four times
+5:01
+that's the benefit of a small project
+5:03
+you can really test different things
+5:04
+this also kind of confirms my theory
+5:06
+that they're using this to test stuff
+5:07
+like Rust out of the four I personally
+5:09
+liked Zig the most followed by C Rust
+5:11
+and C++ in that order liking C more than
+5:14
+Rust is
 5:16
-and they can learn from it i've never been that person the second person is somebody with whom fails themselves even
-5:24
-after hearing that this is a failure they themselves experience the failure and thus it makes them better it makes
+hilarious it shows the state of things
+5:18
+yeah since Zig is not internally
+5:21
+supported at Microsoft just yet chain of
+5:23
+trust etc I continued writing it in C
+5:25
+but after a while I became quite annoyed
+5:27
+by the lack of features that I came to
+5:28
+like about Zigg so I ported it to Rust
 5:31
-them learn from their own mistakes that's me i'm that guy i've always been someone that learns maybe a couple times
-5:38
-from the mistakes then the third type of person is someone who does not learn from their mistakes luckily I've never I've been
-5:44
-that third person quite a few times as well but I'm mostly the second person and I'm almost exclusively never the
-5:50
-first person right the first like I think TJ is the first person i think TJ can read things and realize that they're
-5:57
-wrong and then somehow apply it which I don't understand i don't learn from my mistakes i keep watching i'm the second
+over a few days as it is internally
+5:33
+supported and really not all that bad
+5:34
+either the reason I didn't like Rust so
+5:36
+much is because of the rather weak
+5:37
+allocator support and how difficult
+5:39
+building trees was also found the lack
+5:42
+of cursors for linked lists and stable
+5:43
+Rust rather irritating if I'm being
+5:45
+honest but I would say that I enjoyed it
+5:47
+overall really good research to be doing
+5:49
+internally and also awesome that they're
+5:51
+sharing this instead of keeping it as
+5:52
+private internal knowledge talk all the
+5:55
+you want about Microsoft the fact
+5:56
+that random employees can work on core
+5:58
+stuff and just go answer questions on
+6:01
+Reddit about it and fully open source it
 6:02
-person i'm the second person i think most people are the second person second or third person often this trap is far trickier than anyone anything an expert
+MIT licensed is really cool there are
+6:05
+not a lot of Fortune 500 companies that
+6:07
+give this type of freedom to the
+6:09
+engineers to just be part of the
 6:10
-would let themselves get into novices on the other hand can easily make a a sequence of bad decisions that result in
+community and do cool because
+6:12
+Microsoft needs it they have been a
+6:14
+really good faith player in the open
 6:15
-an everinccreasing cost of solving the problem at hand not only are you lost in a maze without your twine but you also
-6:20
-went in a mysterious cave that looked kind of interesting at first and now you're lost in the dark meanwhile the
-6:26
-worldclass expert is happily skipping through the warm sunny parts of the maze because they knew that that cave would
-6:31
-eventually lead to a dead end also sometimes that's not I mean that's one thing that I think makes an expert an
-6:36
-expert is that an expert can walk into a cave and spend some amount of time in a
-6:42
-cave and then realize that every part of this cave if you keep on descending gets worse and worse and worse and they know
-6:49
-when to back out which I think is a really hard skill to learn is knowing when to back up it's actually really
-6:56
-really really hard to do and knowing you know what i need to delete this and start again right i just need to start
+source space and I think it's worth
+6:17
+acknowledging here's where they describe
+6:18
+why they decided against all of the
+6:19
+other existing options nano Kilo Micro
+6:22
+Yori and others what we wanted was a
+6:24
+small binary so we could ship it with
+6:25
+all variants of Windows without extra
+6:27
+justification for the added binary size
+6:29
+it also needed to have decent Unicode
+6:30
+support it also should be built around
+6:33
+VT output as opposed to console APIs to
+6:35
+allow for seamless integration with SSH
+6:37
+oh interesting they really want good SSH
+6:40
+support that's fascinating lastly first
+6:43
+class support for Windows was obviously
+6:45
+also quite important out of the listed
+6:46
+editors Micro was probably the one we
+6:48
+wanted to use the most but it's just too
+6:51
+large interesting i was building our own
+6:54
+editor and while it took me roughly
+6:55
+twice as long as I had planned it was
+6:57
+still only about 4 months and a bit
+6:59
+extra for prototyping last year they
 7:01
-again that's the teleportation i'm going to simply get reset hard and give it another shot in fact just last week on
-7:07
-stream I was programming something and we literally get reset hard and just restarted the change you know why cuz I
+call out the not invented here syndrome
+7:03
+of the project NIH that's what it stands
+7:05
+for it's when companies insist on
+7:06
+inventing their own thing instead of
+7:08
+using industry standard but I actually
+7:10
+think this is a good one there's
+7:11
+definitely a bit of note invented here
 7:13
-was like "Dang it I did a little bit of vibe coding i did a little bit of this cuz I was comparing the difference between vibe coding and my hand coding
-7:19
-and I did a little bit too much at once lost the plot and said "You know what get reset hard try again uh I'd like to
-7:26
-stress at this point that this is no way the novice's fault no so so again I mean I'm not trying to argue with this
-7:32
-article for the sake of arguing i'm arguing because I think they're both right and wrong when you say it's not somebody's fault the reality to life is
+syndrome in the project but this dev
+7:14
+also spent all of their weekends on it
+7:16
+and they think all of Christmas as well
+7:18
+simply because I had fun working on it
+7:20
+so why not have fun learning something
+7:21
+new writing most things myself i
+7:23
+definitely learned tons which I can now
+7:25
+use in other projects as well really
+7:28
+cool this is an awesome project and huge
+7:30
+shout out to whoever at Microsoft green
+7:31
+lit this one i'm impressed i came in to
+7:34
+make fun of it and it's a good project
+7:36
+so sorry for the intro it's also fully
 7:39
-if you think that cave is interesting and then you keep on going in the cave despite it getting worse and worse and worse it is your fault it's
-7:45
-definitionally your fault using the same metaphor the difference is is that you just didn't you simply were ignorant it
+open source and I really want to give
+7:41
+credit for this it's MIT licensed it's
+7:43
+like no open source microsoft's
+7:46
+been pretty good about this i mean
+7:48
+obviously they have been as you guys
+7:49
+have seen with all the VS Code forks
 7:51
-does not mean it's not your fault you were ignorant of the consequences and we all you know that's just that's like
-7:56
-literally part of learning here right uh they follow the same policy as any expert take the best action available to
-8:02
-you at the time telling a novice to just do better is not constructive feedback this feedback does not lead them to
-8:08
-improving over time since from the only perspective that matters is the scenario the novices they were taking the best
-8:14
-action available to them and if you're giving feedback that doesn't lead to improvement what's the point of the feedback so often how I find things that
-8:20
-actually make it a lot better for me This is I mean okay okay okay this is actually how I feel like I get better we
+that are now giant companies but even
+7:53
+stuff like Microsoft Terminal which is
+7:55
+an actually really good terminal on
+7:58
+Windows this one's written in the much
+8:00
+C++ instead of the inferior Rust but
+8:03
+it's also like true proper open- source
+8:07
+mit licensed as
+8:09
+well they don't screw around with this
+8:12
+and the Windows terminal is actually
+8:13
+really nice which is crazy because I've
+8:15
+had such a bad terminal experience on
+8:16
+Windows my entire life it does a bunch
+8:19
+of little admittedly hacks but those
+8:21
+hacks allow for things like bash syntax
+8:24
+to be supported in PowerShell so you can
 8:26
-got to stand up for this one okay boys we are standing up for this one okay we're standing up for this one so I
+do like cd dot dot and it does what it's
+8:28
+supposed to instead of just breaking
 8:31
-often find that I don't get better okay i do not in fact get better by simply
-8:38
-having someone tell me where I was wrong no no no no no no no no no no no no no
+i'm I have been much happier using
+8:34
+Windows since the terminal dropped i
+8:37
+would argue and this sounds insane but I
+8:39
+do actually believe it windows Terminal
+8:41
+was a bigger ship for Windows developers
 8:44
-no no i personally find that where I get
-8:49
-better is that I have to do it wrong and then I get to see how it's done right
-8:55
-and then I make this weird connection in my brain it's like oh I've never seen a problem from this angle it's now just
-9:01
-like a little thing in my back pocket it's not that so the thing and that's the big thing is that people there's a
+than Windows Subsystem for Linux in a
+8:46
+lot of ways because there just wasn't a
+8:48
+pleasant terminal experience before
+8:50
+almost every Windows dev I knew was
+8:52
+using the terminal in their IDE because
+8:54
+the terminal apps for Windows were trash
+8:57
+now there's a decent one like an
+8:58
+actually decent one and edit might not
+9:02
+be that but it is a cool effort to take
+9:05
+something that is so core to Windows and
+9:07
+show what it would look like if they
 9:08
-lot of sensitivity in this area it's okay to be told that what you built is horseshit it's okay you should be okay
-9:14
-with that just be okay with it okay it's okay you're new even when you're not new
-9:19
-you still build horseshit in fact I would argue that 80% of code is mostly
-9:24
-horshit and it's okay we all make bad decisions okay every last one of us but
+were to have created it today and as you
+9:10
+see this came from the Windows terminal
+9:12
+team so my super spicy hot take is this
+9:15
+might be the team's exploration of Rust
+9:18
+because they've used C++ in most things
+9:20
+in the past this is entirely in Rust
+9:22
+like 100%
+9:25
+100.0 fully Rust let's see what they
+9:28
+have to say edits a new command line
 9:30
-the thing is is that when you get good what you realize is you can make a decision that's bad its rate of decay is
+text editor in Windows they say in
+9:32
+Windows but as you saw it works great in
+9:33
+Mac you just have to build it yourself
+9:35
+edits open source so you can build the
+9:36
+code or install the latest version from
 9:38
-less it can go further you get more miles out of each one of your trade-offs you make and that's because you've made
+GitHub this CLI text editor will be
+9:40
+available to preview in the Windows
+9:41
+Insider program in the coming months
+9:43
+after that it will ship as part of
 9:45
-enough trade-offs and you've seen your trade-offs fail and you've seen your trade-offs become better and then you go
-9:51
-"Ah well look at that i could do that again." And then you do it again and then you do it again then you do it
-9:56
-again and you get better and better at identifying the exact same things every single time which is in fact that
+Windows 11 this is going to be the
+9:47
+built-in edit flow in Windows they
+9:50
+already have a crappy edit like or do
+9:52
+they oh apparently the only built-in
+9:54
+editor for text files in Windows
+9:55
+historically has actually been Notepad i
+9:59
+assumed it had some type of terminal
 10:01
-there's almost always some sort of method to the madness and once you start feeling it out you can write like 50 60%
-10:09
-of your software just oneshotting it and it's mostly correct and then you'll be able to go for months on end and then
-10:14
-you go okay I've gotten these fundamental basises wrong and now I'm gonna have to pretty much rewrite the
-10:20
-software or rewrite large parts of it but it's not that bad because the problem wasn't the same when you started
-10:26
-when you started it was simple people just wanted you to display something out of a database but it never stays that
+editor like when I saw the screenshot I
+10:03
+just assumed it was a a port or a
+10:05
+rewrite of an existing thing it's not
+10:07
+this is actually a all new thing oh so
+10:10
+the classic MS DOSS editor no that's
+10:11
+what I thought but I can't use this
+10:13
+right now so they removed the original
+10:16
+MS DOS editor this makes more sense it
+10:19
+was also 300 kilobytes before and now
+10:21
+it's like 280 so they've maintained
+10:23
+their bar there too which is really cool
+10:25
+but apparently this has not been a thing
+10:27
+in 64-bit Windows ever and it got killed
+10:30
+starting with Windows 10 which is sad
 10:31
-way and if you plan too early for everything to change like a novice then you write shitty code and you know what
-10:37
-experts do this too this is one of those expert traps that people think that somehow is only exclusive to noviceses
+but that's why they brought it back so
+10:33
+what are the features it's lightweight
+10:35
+it's less than 250K for the Windows
+10:36
+build which is nuts so they can just
+10:38
+throw it into Windows cuz like think
+10:40
+about how anal Microsoft has to be about
 10:42
-in fact I would argue that experts fall into this trap more than anybody else
+keeping the Windows image size from
+10:44
+continuing to bloat anything you can do
+10:46
+to trim it is seen as a positive and
 10:48
-but you over refactor or you underfactor or you overengineer you underengineer
-10:53
-you just do all the same crap every single time so do I think it's bad no do I think you need to be told that you've
-10:59
-written shitty things yeah sure why not like don't be sensitive honestly it's not worth it it's not worth it just just
-11:05
-be okay with it like it's okay you're wrong and that's okay i think something
-11:10
-that would help a lot of noviceses is letting them know it's totally normal to be
-11:16
-wrong right it's totally normal to be wrong and that's most of your journey
+anything you want to add to it will have
+10:50
+a ton of fighting it has to go through
+10:52
+but if it's 250K much more likely to
+10:55
+sneak through and if they're also doing
+10:56
+this to start experimenting with Rust
+10:58
+internally it makes even more sense they
+11:00
+also have mouse mode support i'm curious
+11:03
+how that works in Mac it does fully okay
+11:07
+that's actually really nice that I can
+11:09
+just click and get to a specific place
+11:12
+and select text can I select and delete
+11:15
+oh that's actually good this is just
+11:18
+better Notepad then if you're trying to
 11:21
-there are no experts of course there's experts and that's stupid to say it's it's it's genuinely a dumb thing to say unless if unless unless if you what
-11:28
-you're saying is that you and John Carmarmac are the same right like if you're actually saying that then I think
-11:34
-you're delusional you can get shockingly far by being generally good at tech right you can get shockingly far at
+get good like mouse-based text control
+11:24
+in your CLI written in Rust this was
+11:27
+probably a really good reference repo to
+11:29
+look at which is crazy but they had to
+11:31
+keep it small in order to hit that small
+11:33
+binary size so it's probably not even
+11:35
+that big a codebase let me quickly clock
+11:37
+it yeah it's only 16k lines of code of
 11:40
-being uh good at You can be an expert in just having a good guess right there's
+like actual Rust code barely that's a
+11:42
+relatively small codebase that's
+11:44
+actually worth learning things from
 11:45
-like this idea that yeah you're right you probably don't know how to write a database from scratch but you don't often need to know how to write a
+multiple files is cool find and replace
+11:48
+not trivial word rap also very not
 11:51
-database from scratch to be able to use Squeal and you can mostly you can kind of gutshot things like I can look at a
-11:56
-few different interfaces and go "Oo I like this one this one's pretty nice and I like where this is going." And I can
-12:01
-look at other ones and go I don't really like this one like that's why I can look at squeal light and see what it offers and go squeal light this is a really
-12:08
-good choice i think squealite is fantastic the novice has a genius idea still lost in the maze you keep walking
-12:15
-your friend mentioned the ball of twine and after thinking for a bit you realize your wooden your woolen jumper if
+trivial in a terminal UI that's still
+11:54
+why this is why they said they felt the
+11:57
+need to build another CLI editor what
+11:58
+motivated us to build edit was the need
+12:00
+for a default CLI text editor in 64-bit
+12:02
+versions of Windows 32-bit versions of
+12:04
+Windows ship with the MS DOSS editor but
+12:06
+64-bit versions do not have a CLI editor
+12:09
+installed in Box from there we narrow
+12:11
+down our options many of you are
+12:12
+probably familiar with the how do I exit
+12:14
+Vim meme while it is relatively simple
+12:16
+to learn the magic exit commands
+12:18
+certainly not a coincidence that this
 12:20
-carefully dismantled could be a good replacement oh I'm just thinking about chewing on wool i know that's so strange but oh my gosh it's making me feel so
-12:26
-uncomfortable dutifully and with a concrete objective you sit down and begin to unravel your jumper after an
+often turns up as a stumbling block for
+12:22
+new and old programmers alike because we
+12:24
+wanted to avoid this for a built-in
+12:25
+default editor they wanted to be like
+12:27
+nano we decided that we wanted a
+12:29
+modeless editor for Windows versus a
 12:31
-hour or so you get you've got your ball of yarn and after some fail oh my gosh I
+modal editor where new users would have
+12:33
+to remember different modes of operation
+12:34
+and how to switch between them i agree
 12:36
-can't stop thinking about like chewing on yarn for whatever reason have you ever had one of those things where you just think about like the texture and the squeakiness dutifully with your
-12:44
-concrete objective you sit down and begin to unravel your jumper after an hour or so you've got a ball of yarn
-12:49
-after some failed attempts at unspooling the yarn behind you you realize that one strand of yarn is hopelessly weak you
+if you've only ever used a traditional
+12:38
+IDE or like notepads and text editors
+12:41
+the idea of having two modes to switch
+12:43
+between is a hurdle to get over but that
+12:45
+does as they say limit their choices to
+12:48
+a list of editors that either have no
+12:50
+first party support for Windows or they
+12:51
+were too big to bundle them with every
+12:53
+version of the OS i would be surprised
 12:55
-decide to braid the yarn you sit down for another hour or so it's pretty boring but as you assume that this is what is just what solving mazes is all
+if Nano had good support for Windows
+12:57
+even if it is small so this checks out
+13:00
+the small footprint is less than 300
+13:02
+kilobytes could we run a Windows
 13:03
-about a bit later your expert friend calls you up and lambasts you for wasting your time with this yarn business it was clearly never going to
+terminal my guess is the Windows
+13:05
+terminal version for Windows might have
+13:07
+to end up being bigger and they wanted
+13:08
+more control makes sense though i'm
 13:10
-work he says he instructs you to use broken branches from the hedges hedge that makes up the maze as the way of
-13:17
-marking your path you hadn't realized the maze was just a was or was made of hedge until this point yeah okay so I
+pretty sure that this makes Windows the
+13:12
+only operating system that ships with
+13:14
+C++ code C code assembly code Rust code
+13:19
+and React Native code pretty funny that
+13:22
+the start menu is written in React
+13:23
+Native and the terminal editor is
 13:25
-don't really quite get this thing i I guess I quite get it what he's saying is that there's you you find out that
-13:30
-there's a better way to do things but you don't quite understand how to do that better way so you just spin your gears trying to figure it out again
+written in Rust but that's the world
+13:26
+we're in today the results are actually
+13:28
+pretty cool i am impressed i came into
+13:31
+this to meme as you probably could tell
+13:33
+from the intro but it's not bad the
+13:36
+functionality it has is legit the
 13:38
-again I think this is great this is great you should do this i mean I did this hopelessly for years it doesn't work uh but the spirit of it works yes
-13:44
-the spirit of it works i think this is good like I I do think hopelessly pushing through a maze makes you better
+codebase seems like a good reference and
+13:40
+this might be the start of Microsoft
+13:42
+adopting Rust more heavily internally i
+13:45
+see a lot of cool stuff here i don't
+13:47
+think this is going to actually become
+13:48
+the editor that people use to write code
 13:50
-the next time you go into a maze novices spend often spend energy fixing things that are orthogonal to the actual problem orthogonal being developers
+i don't think this is going to replace
+13:51
+Neoim or anything like that i just think
+13:53
+it's a cool effort that we can
+13:55
+potentially learn a lot from and I have
 13:57
-favorite word they want to solve whereas experts are able to direct their energy towards the problems they want to solve
+a lot of respect to the people at
+13:58
+Microsoft who decided that this needed
+14:00
+to be built and instead of making a
 14:02
-this leads to noviceses having an extremely disoriented view of the field because the problems they end up solving are both both more difficult and less
+quick crappy CLI or just forking
+14:04
+something and removing the branding they
+14:05
+built something new from scratch that we
+14:07
+can all benefit from as an ecosystem so
 14:09
-interesting than those being tackled by experts nobody wants to put more effort into figuring out what uh a more boring
-14:15
-problem i also think that this is why AI feels so alluring to people who aren't very good at programming right it just
-14:22
-feels magical it feels like you're kind of an expert cuz when you want to do something it just kind of works you know
-14:28
-what I mean you're like "Wow that's crazy i could just like decide something and it worked it feels it feels magic
-14:37
-right?" The novices search strategy finally with the means of marking the path you've taken you've set out to
-14:42
-traverse the maze or maybe to escape it you're still not sure you stride along breaking the and placing branches as you
-14:48
-go not let's see you're not really sure which paths are the best so you mostly pick at random for a novice the vast
-14:54
-majority of decisions have to be made essentially randomly with very little information going into the choice if all
-15:01
-decisions were sequential and did not depend on any other decision a dedicated novice would come up with the solution
-15:06
-better than a random chance after thinking hard about the decision but the world we live in is fractal and complex
-15:12
-and complexely dependent many decisions depend on other decisions in ways that noviceses have no idea about even a
-15:18
-dedicated novice will be confronted with situations in which they must make several interdependent decisions before
-15:24
-they can get feedback on the efficacy of those decisions the novice is at first forced to make completely arbitrary
-15:31
-choices and face the consequences hopefully they can learn which consequences were due to which decisions
-15:37
-but this isn't always feasible also okay I know I'm not trying to harp on AI nor are we trying to like talk any more about AI but I do have to say one more
-15:43
-thing i've been saying this whole time that I think the maze the failure of the maze the learning how to get out of a
-15:49
-maze having valuable feedback from a friend or perhaps just having valuable feedback from your previous self in a
-15:55
-previous maze is all things that make you grow more more and more into a or an expert i think that we often as of
-16:04
-recent have been shortcutting this process and that's always been the thing I've said multiple times which is that I
-16:10
-fe that's my biggest AI fear it's not that I think programming is go away it's not that I think it's going to be better
-16:16
-than me which it you know which theoretically at some point in the universe it will be better than me it's not any of that it's that it's taking
-16:23
-away your ability to walk through the maze yourself and understand why you should use a branch at some point or why
-16:28
-you should use something else like you're just you're you're not offloading the things that you understand
-16:35
-completely you are onboarding and having something else solve and just point you down a specific path saying this is the
-16:42
-way you do it and you go "Oh I didn't think about it that way." But you don't realize why they're making that decision why was that decision made specifically
-16:48
-and that's kind of like the big the big thing that is really hard to get out is why was this one path the right one
-16:55
-versus other paths what how did it arrive to that conclusion it's not that
-17:01
-the conclusion itself was valuable it's arriving to that conclusion and being able to bring forth that change is the
-17:08
-important part and so even asking chat jeopardy why did it make that decision isn't quite the same because that means
-17:14
-the idea never originated in your head it originated somewhere else and so
-17:19
-you're like okay and so if you're that very fortunate person that can learn
-17:25
-just by reading someone else's mistakes and you could understand in that weird holistic manner that I said I can't then
-17:31
-maybe you can do that but I've just never been able to do that right like the that's the thing is that I can't
-17:36
-learn from that the expert knows how to avoid the failure because he's uh been inside the failure exactly and that's
-17:42
-like one of the hard like the honestly I think one of the hardest parts about coding is actually like being able to your
-17:48
-thoughts directly translating into code and that's like a really that just it's just a muscle you have to do over and
-17:55
-over and over and over again effort uh makes life easier yes effort does make life easier from the perspective of an
-18:00
-expert the decision taken while solving a problem are often second nature and yet are carefully crafted as to avoid
-18:06
-unnecessary trouble down the road a novice looking upon the expert's work would be hardressed to distinguish these few important decisions based on years
-18:12
-of hard work and study from the myriad of far less important decisions based largely on personal tastes true novice
-18:20
-don't even see the decision you're breezing through the particularly long and straight bit of the maze when your an expert friend calls you up and once
-18:25
-again says "Why didn't you take that right a few meters back?" they ask "there was none," you assert and
-18:32
-glancing behind you confirm this fact just in case you retrace your steps and sure enough there's a sliver of a gap in
-18:37
-the hedges which you suppose could be a path to take "it's terribly cramped and overgrown compared to the wide clean
-18:44
-paths you've been taking so far but it is a path." Looking around carefully now you realize the hedges are actually
-18:50
-packed with cracks and gaps and thin spots who knows how many paths you've missed sometimes the novice doesn't even
-18:56
-know that the decision there's a decision to make when the decision is pointed out by a friendly expert the
-19:01
-novice can often either make the correct decision or appreciate the correct solution when it's shown to them but the
-19:07
-novice didn't even know there was a decision in the first place this makes it incredibly difficult for the
-19:13
-ambitious novice to make progress without outside help the one thing I don't like about this whole thing is
-19:18
-that it puts like the novice in this constant state of
-19:24
-inability and purely a victim by the circumstances if that makes a sense they are incapable
-19:31
-of of making it out themselves well to a degree that's what it is i'm not sure if I believe that what I mean by that is
-19:37
-that the novice could never the novice could not observe that there's cracks in
-19:43
-the hedges without being told that there's cracks in the hedges but then you have to go okay well let's replay
-19:49
-that recursively does that mean the person who told him that there was cracks in the hedges was also told that
-19:55
-there was cracks in the hedges and then you have to go okay well then who told that person well who told that person
-20:01
-right is it's like the one miracle of science right it's the one miracle science makes
-20:07
-you have to believe is that you have to believe that there was some sort of beginning that just came into came into
-20:13
-being i guess I'm defining a novice as someone who can't figure it out for themselves but that's not a novice like
-20:18
-definitionally that is not a novice a novice is not someone who can't figure it out for themselves a novice is
-20:25
-somebody who is inexperienced that's what we call an idiot yes this was what we would be calling an idiot someone
-20:32
-that has to be constantly pointed to the next step i think you can like I think any one of you there like type one in
-20:37
-the chat if you actually think yourself as a novice you're fairly inexperienced i'd say like one to two years into
-20:43
-learning how to program would be what I would consider in the in the deeply novice range i think there's a lot of
-20:49
-you i think there's a lot a lot of you and I think a lot of you have the vast
-20:55
-capability to not be a novice given time and effort and that
-21:00
-time to go from being a novice to being intermediate to being an expert is going
-21:06
-to be directly proportional to your desire to not be a novice meaning that if you spend two
-21:13
-hours a day you're going to grow two hours a day unironically if you spend 12 hours a day
-21:20
-you're going to beat the person spending two hours a day i spent a good 80 to 100
-21:25
-hours a week every week for years at first because I wanted it i wanted it so bad like if I didn't make it I had to
-21:33
-return to my pre like I only had my previous life to return to which was not a place I wanted to be so I was so
-21:38
-motivated by both want and need and you know the 10,000 hour thing is interesting i'm not sure if 10,000 hours
-21:44
-is true or isn't true right i don't know what I don't I don't
-21:50
-know exactly how it works in programming right but there is something to it novices have skill issues novices do have skill issues it's true not that's
-21:57
-true that's because they it's it's not that they have skill issues they don't have skills yet sometimes the novice doesn't even know that there's a
-22:03
-decision to make and when the decision is pointed out by a friendly expert the novice can often either make the correct
-22:09
-decision or appreciate the correct solution when it's shown to them but the novice didn't even know there was a decision in the first place this makes
-22:15
-it incredibly difficult for the ambitious novice to make progress without outside help they cannot just
-22:20
-check their work for the mistakes because for any substantial body of work the novice likely won't be able to point
-22:27
-out half their decisions see it's that the whole v like there's like an imp like I said the the implicit victim
-22:33
-mentality I I'm not a huge lover of uh you can squeeze through this gap in the hedge recommended by your expert friend
-22:39
-before long you've come to a fork in the maze one path leads left and the other leads right the left path looks a bit
-22:44
-wider and a bit brighter but having learned from your mistakes you decide to call up your expert friend and get their advice and learn from their wisdom the
-22:50
-right path is better your friend declares you ask for an explan explanation but they are unable to give
-22:56
-you anything more specific than the right path is a stronger option it's clearly got the right look about it
-23:02
-there's no chance it will let you down frustrated at the lack of intellig intelligible wisdom you take the right
-23:07
-path and sure enough it looks like it was the correct decision the path clears up and starts to head towards the exit
-23:14
-as far as you can tell but you still don't understand what your expert friend saw and it still see it seems like they
-23:20
-don't understand what they saw either you know like there's the whole Euro dreams of sushi thing and that thing's kind of always stuck with me which is
-23:26
-the people who make rice have to make rice for 3 years before they can move on to other parts of making sushi and
-23:31
-that's because I and I've used this term hidden knowledge a lot which is there's the intelligence of something and then
-23:36
-there's the hidden knowledge of it if you've ever played any sport that requires a bit of finesse you understand
-23:41
-the hidden knowledge much much better and so uh some Greek pointed this out
-23:46
-like 2,000 years ago exactly uh and so like I played a lot of table tennis i played an enormous amount of
-23:54
-table tennis and there comes this point where at first you're like so focused on just trying to like hit it and when you
-24:00
-hit it you don't quite understand why you're hitting it like this you're just repeating this motion because this is
-24:07
-what you've seen other people do and then at some point it almost becomes where you can feel how the ball
-24:13
-hits and you know what it's going to do and then at some point you can see how
-24:19
-the other person hit and you know that because they put this kind of spin on it you need to hit it slightly differently
-24:26
-than you would hit it if they put a downward top with a bit of right on it you know you can like almost like [ __ ]
-24:33
-give me that money kind of swing across the like the face of it and give it like this sweet arcing to the side uh hit
-24:40
-because you felt it so many times and all of a sudden it's like there's this new set of wisdom or new set of
-24:45
-knowledge that opens up where when you see someone do something you know a way to respond not because I mean you could
-24:52
-even write a book about it you could write every single motion you did but someone couldn't pick up the paddle and just do it cuz they haven't felt it they
-24:59
-don't feel the spin yet they don't feel how it feels against the paddle they
-25:04
-can't understand that when they hit it they understood where they hit it within the paddle and why it is the way it is like they they can't process those
-25:11
-things because they don't have the touch yet and so there's like this kind of intuition you started to develop and I'm
-25:16
-sure this happens everywhere i'm trying to learn how to play a little bit of golf and I want to under I can I can see
-25:22
-that there is intuition i just don't know how to gather it other than playing a whole bunch this is why coaching is
-25:28
-hard yes because there's a whole set of feeling uh table tennis legend prime i did go to China and I did have a line i
-25:35
-did uh beat a university team at one point i was I got pretty good i had a whole slew of people lined up outside
-25:41
-the door started beating regular people and then the line got to like a hundred people and just was beaten one by one by
-25:46
-one did like Olympics set to 11 and it got so fun and people were just like one guy was just like you American you can't
-25:53
-do this and I was just like yeah just just just slapping a lot of the people came in holding it with uh like holding
-26:00
-it pick like a Chinese pick style and I was still just handshake and I was just like just dominating it was so sweet it
-26:06
-was like the greatest moment of my life and now I suck at table tennis but I loved it i loved it i was so good at one
-26:12
-point the expert's intuition is often formidable but rarely comprehensible the inability to clearly explain their
-26:17
-decisions is what makes it so useful for a novice to spend time with experts the expertise ensemble your expert friend is
-26:23
-chastising you for missing the obvious gaps in the hedge and not for realizing you could climb over hedges and for not
-26:28
-bringing a hedge trimmer and and for the myriad of other choices that you made without even realizing you had the
-26:33
-option to do differently as your eyes glaze over you hear someone call to your friend through the phone turns out your
-26:38
-expert friend has an expert friends of their own and they're all helping each other i thought I was meant to figure it
-26:44
-out on my own you cry but your friend asks whatever uh gave you that idea to
-26:49
-be completely fair I've learned almost exclusively everything mostly by myself or attempting to read what I can on the
-26:55
-internet the startup I did was long before I ever had a real job when I went to my first real job I just jumped in
-27:01
-and started just making decisions for them because I thought some of their things were bad and they liked it and they said "Keep making the decisions."
-27:07
-I've never really fallen into the position where I've had a good mentor for coding like there's one guy I can think of that kind of did it but he was
-27:15
-straddling the line between manager and coder and he didn't find that line good at all but he did try and so we kind of
-27:22
-did that for a little bit but I've just mostly lived the life of just solitary try to learn how to code right he's
-27:28
-talking about heed race things you shut up pick you ask how you two can get a network of peers who can help you
-27:34
-through the maze that's a rarity just so you know this is a rarity more than anything else your friend says to join
-27:39
-some online chat rooms unfortunately for you they're all speaking inco incomprehensible jargon or debating uh
-27:45
-optimal twine spooling techniques experts often either have a network of people by the way if you do join my
-27:51
-discord I don't know if you're going to get people talking about expert twine optimal debating they
-28:00
-can quickly distinguish useful insights from helplessly generic summaries and don't have to spend much time looking for the information they are after but
-28:06
-novices have no clue about how to distinguish the two nor how to find the communities who can help them effectively eventually you finish the
-28:13
-maze not wanting to repeat the experience of being a complete novice and you dedicate yourself to learning
-28:19
-more to and to not failing ill to the traps of being a novice but how exactly should you do that to have as a novice
-28:25
-you need to find a sympathetic expert on your side to help you out and to whom you can ask all questions regardless of
-28:32
-how trivial the questions might be i do think if you can find someone that will help you become better it's probably
-28:37
-it's probably better but I would make I can I make an argument can I make a counterargument to that if you can't
-28:44
-identify how to solve problems well who says you can identify an expert that is
-28:49
-worth listening to checkmate atheist why don't you go tip that fedora somewhere else reddit tier atheism i
-28:57
-just owned you with facts logic and theology uh anyways a replacement for
-29:03
-this finding uh a lot of experts so you can spread the the load amongst them what uh you could go very far online
-29:10
-nowadays and even more so with AI tools but many of the above trappings that novices succumb to uh to do not
-29:17
-magically dis uh disintegrate because you have access to the internet or to a
-29:22
-chatbot you still don't know how to recognize the subtle decisions you still don't know how to distinguish good ideas
-29:28
-from bad you still don't know how to avoid long-term cascading or cascades due to bad choices the internet helps
-29:34
-for sure but having someone by your side is monumentally better and I would also argue that I mean I would argue a the
-29:42
-cascading of bad decisions is not is is just not something you can avoid it's just
-29:48
-simply something that you make it a longer path until it cascades into bad
-29:54
-decisions like that's all it is also something that I think is kind of being missing here which is origin of
-30:00
-idea i know I I kind of alluded to this earlier if you cannot originate the idea
-30:06
-meaning that you can apply what you've previously learned you haven't learned something yet if you need to
-30:12
-continuously keep on getting help or getting guidance you're not applying what you previously learned you're just
-30:17
-not you're you need to be able to originate that that's like a good first step is that you start taking your
-30:23
-originations apply them find where they're weak reorinate the idea apply it
-30:28
-and see where it's weak where it's weak see where it cascades one thing that can be tricky to convey to your friendly expert is that sometimes you just need
-30:34
-to be able to show them what you're doing without any specific question in mind i often found that I can feel
-30:39
-uneasy about what I'm doing and then talking with an expert friend will quickly surface that I've made some error that will cause pain later having
-30:47
-someone who's happy to spend time just talking without any specific goal to solve will go a long way yeah there's um
-30:54
-I I have this somewhere on my channel where I did a talk with Casey Mor Miratori about just like how to go about
-31:00
-game design and that was super helpful and he just told me like hey here's some things he would do and it was just like
-31:06
-great for me i applied everything he said and I didn't know how to apply it and I had to kind of like reapply it a
-31:12
-few times but it was honestly a really great like like way to do something and
-31:17
-now I just like still I keep it in my head all right the let's see in the workplace this style of just talking
-31:23
-interaction between noviceses and experts is critical for knowledge transfer and training but novices rarely have a voice with key decision makers
-31:30
-and so promoting these interactions is often neglected it is not sufficient to instruct senior employees to answer the
-31:36
-newcomers questions since the vast majority of learning comes from novice watching how the experts applies their
-31:42
-skills i think that's supposed to be applies and not from direct questions and answers what makes the scenario even trickier is that the experts will likely
-31:48
-think just talking interactions are basically worthless but answering concrete questions feel much more useful
-31:54
-the novice on the other hand could likely discover answers to concrete questions on their own given enough time
-32:00
-but developing the intuition that comes through while an expert is just talking with a novice is incredibly valuable to
-32:06
-the novice this explains the difficulty of training new employees when all your experts are working remotely as remote
-32:12
-work practically eliminates that sort of casual unguided water cooler interaction i actually I actually fully agree with
-32:18
-this by the way there is something magical about there is something just that's different about in person i think
-32:24
-you can learn more and I do think that the people that get affected the most by remote work are inexperienced people
-32:32
-because the barrier to reaching out is higher i think the it it's harder to get in front of
-32:38
-somebody i think there's a lot to it that is most certainly not I'm not saying remote work is bad i think
-32:43
-there's a lot of good parts to remote work i remote worked at Netflix for the last four years of Netflix i'm not saying it's like a horrible thing but I
-32:50
-could definitely tell I also missed out on a lot of just stuff that's hard to say i just wasn't as effective i was
-32:58
-still pretty effective it just wasn't quite the same netflix by the way pick in case you're pick if you're wondering
-33:03
-as Netflix by the way in case you're wondering just in case something you can independently and possibly it's the best done without expert supervision is
-33:10
-exploration of the field you know nothing and have no basis about what may or may not be useful anytime you've come
-33:15
-across something that feels like it has uh some depth to it such as well-written essay series or a deep technical dive
-33:21
-you need to invest heavily into it as a novice your one advantage is that everything is new and nobody expects you
-33:28
-to be fast because of this you can afford to spend time to learn as much as possible by the way I love this take
-33:33
-advantage of this every single job you go to every single time this is like this is so good uh I honestly don't
-33:39
-think it's possible to overdo this spending a week exploring some specific arcana of your field is probably going
-33:46
-to pay dividends uh because all of a sudden your expert level in this tiny aspect of the field you can go
-33:51
-head-to-head with an expert okay maybe that's like a little Okay maybe that's a little overstated if you can spend a
-33:58
-week and you can become an expert you're either learning something that's exceptionally shallow or the experts are
-34:04
-idiots i'm just throwing it out there low expectations are your advantage
-34:09
-absolutely or the or the field is one week old also true since they last read
-34:14
-about the weird subdomain 5 years ago don't study the common things and go all in on a niche pockets the common things
-34:21
-are common enough that you learn them through osmosis regardless of what your main activity is but the niche things
-34:26
-require active study and ignoring the niches is how you remain a novice very good also it's like the it's the
-34:33
-specialty of a generalist is to not is to know how far into the niche you delve right very very important amongst
-34:42
-all of this the novice needs courage to make decisions without knowing the consequences and confidence so that they
-34:48
-wholeheartedly commit to their decisions and grant them the greatest chance of success these traits are not trivial and
-34:54
-confidence can easily be crushed by a snide comment from an expert i don't want to imagine how many promising noviceses have been spurned by
-35:00
-unimpressive experts in this way advice from a soul-hearted expert is worse than no expert advice due to all the risk of
-35:06
-destroying the novices's confidence by the way I'm giving every person that has this inability to to be
-35:13
-able to live their own life without someone just crushing them i'm giving you the permission right
-35:18
-now to stop it stop it okay seriously stop letting one person
-35:25
-destroy you because you think them an expert this is just the strangest part of life is that there is always a group
-35:32
-of people who once unencouraged remain unencouraged don't let that happen like you know there's I
-35:41
-I always had this thing where I I would complain with uh I went back and forth with who who maybe still is but he was
-35:48
-like the vice president of inclusion diversity at Netflix i used to go back and forth with him talking about all like just interesting problems he was
-35:54
-kind of he was a fun guy to talk to i actually had a lot of fun talking to the guy uh and one time he was telling me
-35:59
-the difference between diversity and inclusion is diversity is inviting people to the dance and inclusion is
-36:05
-getting asked to dance and so I said I think he's fundamentally wrong i think
-36:10
-that he's wrong on both aspects to that and I said the single most important thing is that nobody gets asked to dance
-36:17
-if you want to be included you have to ask to dance and if you think and you wait and you wait for somebody else to
-36:24
-be the one that rescues you and brings you in you are going to wait on the sidelines for the rest of your life and
-36:30
-it is stupid to sit there and wait like don't wait for someone else to open the door you take your foot you first place
-36:38
-it behind you you harden your core and swing with all of your might and you kick the effing door down okay stop
-36:45
-being a [ __ ] and just toughen up you got to do it because or else you're going to wait to be asked to dance you
-36:51
-know why you know why cuz the reality is that nobody's inclusive okay people like
-36:57
-being around people that are like them like this is a just this is a common human experience in every society and
-37:03
-they will stop they people will not invite you in this happens over and over and over and over
-37:09
-again people don't invite other people in this is like a common normal thing
-37:15
-and when people are like "Oh I only hang out with people with different opinions." It's a group of people being like "We only hang around with people
-37:20
-with different opinions we're so unique." Okay sure you are there's very few people that somehow can floss that
-37:27
-line because this these these worlds don't really exist they don't i want them to exist but they don't they're
-37:32
-hard but I I mean that in the nicest possible way which is that it's extremely difficult to be a part of a
-37:38
-group and I know I I know people are going to tell you that everything should be nice in the real world it's not nice
-37:44
-you got to ask the dance if you're not willing to make that it's going to be really hard for you to
-37:50
-get into into any group you have to network you have to take the active stance in your life and when someone
-37:57
-tells you you can't there's kind of like a different there's kind of like a a few different ways you can kind of approach that some people when they hear that
-38:03
-they just stop trying there's some people that when they hear that they take that and use it as like anger or
-38:09
-I'm going to prove that person wrong or there's some people that hear that and they're not motivated to prove the
-38:14
-person wrong they're just more motivated that they can do something that someone can't like that I'm not here to prove
-38:21
-somebody wrong i believe that I can and I want to believe in myself and I do think the third part the third version
-38:27
-is the best version which means I'm not here to just simply be someone that's always fighting against somebody else
-38:33
-i'm somebody that's fighting against myself always trying to be the better version and when someone says it's not
-38:39
-possible I'm going to say I can i can do that right and so I I try to always have that in my head which is that I want to
-38:45
-be the person who it doesn't matter what anybody else says when everyone says "Hey you're really good at this." I want
-38:51
-to go "Okay maybe I am maybe I'm not." When someone says "You're really bad at this." I go "Hey maybe I am maybe I'm not." I'm going to constantly try to go
-38:58
-after what I want to go after i just had a deep realization that I don't include myself in groups even when I want to
-39:03
-reason I feel like sometimes I would be intruding in their space and make them feel uncomfortable yeah and maybe you
-39:09
-maybe you maybe you do but just like everything else just like this entire article talks about more on the
-39:15
-technical set of skills the first I mean this is why I'm like 98% sure that most
-39:21
-people that call themselves neurode divergent are literally people who don't practice social skills and then wonder why they're bad at it the first time you
-39:27
-join a group you're just not good at it this is normal there's nothing weird about that you're weird because you've
-39:34
-never done it just like you're not good at programming because you've never done it like that's it that's not a bad thing
-39:40
-that's a normal that's just a standard world thing and if here's the thing is
-39:45
-that you could do you could be a very socialable person at one point in your life and then later on stop doing it for
-39:50
-a years and then realize you're not good at it anymore it's just like everything else i'm no longer good at table tennis
-39:57
-not because I'm not because I'm like some unique human that got bad over time no I got bad over time because I'm like
-40:04
-every other human you know it does make life harder when all you ever do is communicate via
-40:10
-text it makes it harder to have an in-person conversation right it just does by by the very definition of that
-40:16
-it's not I'm not right it's a prime with the it's all in your head argument that's a lot of life is it's all in your
-40:22
-head now I mean I have some real friends who actually have real like that are real neuro neurode divergent and they're
-40:29
-at a clear disadvantage in life right they're at a clear disadvantage
-40:34
-and they have to go through a lot more to do stuff i'm talking about the 98% of Twitter people that have the word
-40:40
-neurode divergent in it and that's because they're just socially awkward they're like "I have autism i'm just awkward." You're like "You're not
-40:45
-awkward dog you're not awkward you're unpracticed." And there's a huge
-40:51
-difference between the two okay stop confusing someone's like really hard
-40:56
-life situation with you being awkward all right anyways sorry I went on a weird tangent just there the downside to
-41:02
-this mindset is that it's easy to disregard other people's hardships because it starts to look like everyone's at their own fault if they
-41:07
-ever fail so I think the thing you're confusing is very very simple and very very straightforward and I'm glad you said that so let me just try to uno
-41:14
-reverse you just a little bit okay the thing is is that you obviously can't control every circumstances
-41:22
-sometimes funding runs out and you can no longer work on it and maybe you did fail the company in some aspects but
-41:28
-also you just did weren't given enough time to solve the product maybe there was people that truly were jerks and you're not just the jerk thinking
-41:34
-everyone's a jerk and that's that right there's like there could be a whole set of situations that failure was outside
-41:40
-of your control absolutely but if for any reason you look at those
-41:48
-things and think ah failure was out of my control i think that that
-41:55
-mentality is in fact a h 100 times more dangerous than whatever you are trying
-42:01
-to protect against this kind of feels like that whole like it's it's this overprotective overcoddling idea that oh
-42:09
-we better not let people feel these certain things because if you do my gosh they could use it as a weapon to like be
-42:14
-mean to somebody else and you're just like true but that's not what anybody was saying selfaccountability is
-42:19
-extremely important and I think you should always be as accountable as possible in fact I think it's better to be over accountable than under
-42:26
-accountable and at the end of the day if you take your measurement stick and you
-42:31
-use it as a means to beat somebody else you will quickly realize or you'll die a
-42:37
-loser you will realize that you in fact don't even live up to your own measurement stick and that you often
-42:44
-fail from it as well and so no I don't care if somebody uses this as a as a jumping board or a springboard to become
-42:50
-a jerk because yes that's going to happen no matter what you do but it's a thousand times worse for people not to
-42:57
-constantly strive after their own self-accountability i am a thousand times more willing to bet on the
-43:03
-self-accountability than I am to be careful of somebody else's feelings right because we all have the jerk inside of us and if you if we do the
-43:11
-opposite of everything I say there will still be a jerk on the other side there's always a jerk there's a jerk in
-43:16
-all situations every single every I mean there's a reason why it says good like
-43:22
-hell is paved with good intentions is it has nothing like it it's actually a
-43:27
-pretty good phrase i normally hate a lot of these phrases i think hell is also paved obviously the path to hell is also
-43:33
-paved with a lot of bad decisions and all that but regardless of all those things there's also a lot of uh what's
-43:39
-it called there's also a lot of just things you attempt to do good that end up being
-43:45
-bad and it's not that you like you know like that time you could have said something that would have changed
-43:50
-somebody or you would have called out somebody for doing something that you really didn't like but instead you would rather be kind of nice and you're like
-43:57
-ah you know what i'd rather be a nice guy to this person maybe they're a little bit down and maybe we just don't need to say these things to this person
-44:04
-so you never say anything and then that person goes on and continues to make that mistake were you better or worse to
-44:09
-that person well it's an impossible question to answer but at the exact same time you could have very well been worse
-44:15
-to that person you with good intentions could have made somebody's life worse they have to go learn from their mistake
-44:20
-again the lack of consistent empathy between experts and noviceses would suggest that despite feeling easy it is
-44:26
-in fact difficult i've written more about this here in the extreme case the lack of empathy leads uh to experts
-44:32
-deriding the work of noviceses as not having the prestige class taste status expressed so deafly by the work of the
-44:39
-experts this self-fulfilling no let's see this is self-fulfilling novices will either conform to the experts sense of
-44:45
-aesthetics dismiss the field of study as not for them or in rare cases work incredibly hard to prove experts wrong
-44:51
-after all and in this last case the novice becomes the an expert anyway experts tend to have an aesthetic
-44:57
-preference towards technically challenging work rather than simple but interesting work and I have written more about this phenomenon as experts
-45:03
-aesthetics that's interesting i like the I like this closing thought i think there's probably a little bit more as I said you don't have to prove people
-45:09
-wrong sometimes you just want to become better right when someone says that they've been dismissed their goal isn't
-45:14
-to prove somebody wrong but I want to be better and that can be you know that can be motivating that can be motivating for
-45:20
-some amount of people anyways uh this hasn't been my experience with most experts a lot of the ones I've encountered are humble and curious yeah
-45:26
-I mean I think that that you're a lucky person i think some people have had some bad ones uh glad it gave some food for thought no it was great this was a great
-45:32
-article i I enjoyed this article quite a bit i think there's a lot to this and there's a lot to talk about but at you
-45:40
-know my big worry the biggest worry I have is a I don't want any novice to ever consider themselves helpless and
-45:45
-only a victim to what the expertness of an expert i think that it's it's really comes down to just I think that the
-45:52
-fastest way to avoid being a novice is just hard work and you know what if no
-45:58
-one can tell you you're right or wrong I'm going to give you a little secret the thing that you write and the code
-46:04
-you produce will eventually tell you if you're right or wrong it will because you will find
-46:10
-yourself having this exceptionally hard time adding more things to it and you're like "Why is everything falling apart it
-46:16
-started off so easy and now it's like when I add something it's so hard what have I done?" Try to learn from that can
-46:23
-you take something out and rework it to make it easier code never lies code
-46:29
-never lies ever it does exactly what you say it should do and when it doesn't
-46:34
-work guess what that's because you're you're bad at it when it doesn't do what you want to do race conditions are a lie
-46:41
-false race conditions are a truth that you created right you created that condition
-46:47
-and now you get to deal with the consequences dude threat like threading race conditions are just like the worst data races do you think it's uh we came
-46:55
-up with programming without the internet like this no easy answers yeah i mean I started to learn how to program before
-47:00
-there was Stack Overflow and so I I think the thing is I do Dude I love by the way I love lies damned lies and
-47:06
-statistics LLMs i love that answer uh but but seriously I do think there is probably something to that when you had
-47:12
-to learn and there was no Stack Overflow what do you do there's a lot of
-47:18
-people that can't even imagine a world without a quick Google search books yeah i mean I used to have to program a bunch
-47:25
-of Java you know what I had to do read the Java docs right just keep on reading docs until you just
-47:31
-magically find something because like one thing that was really hard is I didn't even know the word
-47:37
-tokenizer was what people used so I just started looking up the word string over
-47:42
-and you know looking through all the string string string string string string string to token token tokenizer what's a token you know you have to just
-47:48
-sit there and just read the entire entire doc I read so much Java 1.6 six
-47:55
-dude it was insane it was actually insane all right anyways all right this
-48:00
-is great the name is the You know what don't ever think you're done learning again yeah
-48:07
-that's a good ending i'm happy with that ending bye
+shout out to the people at Microsoft who
+14:11
+decided to do this who green lit it and
+14:12
+also of course the ones who built it
+14:14
+there's a long list of different editors
+14:16
+that come out of Microsoft and this is
+14:18
+one of the coolest ones yet let me know
+14:20
+what you guys think
+
